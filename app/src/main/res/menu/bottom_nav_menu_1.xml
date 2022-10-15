@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_expert"
+        android:icon="@drawable/menu_expert"
+        android:menuCategory="secondary"
+        android:title="@string/title_experts" />
+
+    <item
+        android:id="@+id/navigation_journal"
+        android:icon="@drawable/menu_journal"
+        android:menuCategory="secondary"
+        android:title="@string/title_journal" />
+
+    <item
+        android:id="@+id/navigation_indicator"
+        android:icon="@drawable/menu_indicator"
+        android:menuCategory="secondary"
+        android:title="@string/title_indicator" />
+
+    <item
+        android:id="@+id/navigation_technical_analysis"
+        android:icon="@drawable/menu_analysis"
+        android:menuCategory="secondary"
+        android:title="@string/title_technical_analysis" />
+
+</menu>

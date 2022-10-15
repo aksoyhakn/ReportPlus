@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.tradeonline.ui.main.technicalAnalysisDetail.TechnicalAnalysisDetailViewModel" />
+
+        <variable
+            name="fragment"
+            type="com.example.tradeonline.ui.main.technicalAnalysisDetail.TechnicalAnalysisDetailFragment" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/StyleBackgroundColor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            style="@style/StyleBackgroundImage"
+            android:layout_width="600dp"
+            android:layout_height="400dp"
+            android:alpha="0.6"
+            android:scaleType="fitCenter"
+            android:translationX="-100dp"
+            android:translationY="-210dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.tistory.zladnrms.roundablelayout.RoundableLayout
+            android:id="@+id/rlClose"
+            onSafeClick="@{()->fragment.clickBack()}"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:alpha="0.7"
+            android:elevation="5dp"
+            app:backgroundColor="@color/white"
+            app:cornerAll="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/ic_close"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+
+        <com.tistory.zladnrms.roundablelayout.RoundableLayout
+            android:id="@+id/rlInformation"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="-20dp"
+            app:backgroundColor="@color/white_50"
+            app:cornerAll="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rlClose"
+            app:layout_constraintVertical_bias="0"
+            app:strokeLineColor="@color/solitude"
+            app:strokeLineWidth="1dp">
+
+            <TextView
+                android:id="@+id/tvTechnicalAnalysisTitle"
+                style="@style/StyleTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="4"
+                android:padding="10dp"
+                android:text="@{viewModel.technicalAnalysisDetail.toolName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0" />
+
+            <com.tistory.zladnrms.roundablelayout.RoundableLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:elevation="5dp"
+                android:id="@+id/rlStartVideo"
+                app:backgroundColor="@color/white"
+                app:cornerLeftTop="30dp"
+                app:cornerRightTop="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTechnicalAnalysisTitle"
+                app:layout_constraintVertical_bias="1"
+                app:strokeLineColor="@color/solitude"
+                app:strokeLineWidth="1dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    onSafeClick="@{()->fragment.clickVideo()}"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    bind:setImageCache="@{viewModel.technicalAnalysisDetail.imageURL}" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ivPlay"
+                    onSafeClick="@{()->fragment.clickVideo()}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:src="@drawable/ic_video_play"
+                    android:scaleType="fitXY" />
+
+            </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+        </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

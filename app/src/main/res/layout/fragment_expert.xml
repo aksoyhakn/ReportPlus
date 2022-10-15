@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.tradeonline.ui.main.expert.ExpertViewModel" />
+
+        <variable
+            name="listener"
+            type="com.example.tradeonline.ui.main.expert.adapter.ExpertAdapter.ListenerExpert" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/StyleBackgroundColor"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="600dp"
+            android:layout_height="400dp"
+            style="@style/StyleBackgroundImage"
+            android:scaleType="fitCenter"
+            android:translationX="150dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rvExpert" />
+
+        <TextView
+            android:id="@+id/tvExpertTitle"
+            style="@style/StyleTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/title_experts"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvExpert"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvExpertTitle"
+            app:spanCount="3"
+            bind:setExpertData="@{viewModel.expertList}"
+            bind:setExpertListener="@{listener}" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

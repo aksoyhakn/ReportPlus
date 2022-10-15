@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.tradeonline.ui.main.indicatorDetails.IndicatorDetailViewModel" />
+
+        <variable
+            name="fragment"
+            type="com.example.tradeonline.ui.main.indicatorDetails.IndicatorDetail" />
+
+        <variable
+            name="listener"
+            type="com.example.tradeonline.ui.main.indicatorDetails.adapter.IndicatorDetailAdapter.ListenerIndicatorDetail" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/StyleBackgroundColor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            style="@style/StyleBackgroundImage"
+            android:layout_width="600dp"
+            android:layout_height="400dp"
+            android:alpha="0.6"
+            android:scaleType="fitCenter"
+            android:translationX="-100dp"
+            android:translationY="-210dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.tistory.zladnrms.roundablelayout.RoundableLayout
+            android:id="@+id/rlClose"
+            onSafeClick="@{()->fragment.clickBack()}"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:alpha="0.7"
+            android:elevation="5dp"
+            app:backgroundColor="@color/white"
+            app:cornerAll="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/ic_close"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+
+        <com.tistory.zladnrms.roundablelayout.RoundableLayout
+            android:id="@+id/rlIndicatorDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="-20dp"
+            app:backgroundColor="@color/white_50"
+            app:cornerAll="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rlClose"
+            app:layout_constraintVertical_bias="0"
+            app:strokeLineColor="@color/solitude"
+            app:strokeLineWidth="1dp">
+
+            <TextView
+                android:id="@+id/tvTIndicatorDetailTitle"
+                style="@style/StyleTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="4"
+                android:padding="10dp"
+                android:text="@{viewModel.indicatorDetailResponse.indicatorName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0" />
+
+            <com.tistory.zladnrms.roundablelayout.RoundableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:elevation="5dp"
+                app:backgroundColor="@color/white"
+                app:cornerLeftTop="30dp"
+                app:cornerRightTop="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTIndicatorDetailTitle"
+                app:layout_constraintVertical_bias="0"
+                app:strokeLineColor="@color/solitude"
+                app:strokeLineWidth="1dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvIndicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:spanCount="3"
+                    bind:setIndicatorDetailData="@{viewModel.indicatorDetailResponse.youtubeIds}"
+                    bind:setIndicatorDetailListener="@{listener}" />
+
+            </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+        </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toBottomOf="@+id/rlIndicatorDetail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

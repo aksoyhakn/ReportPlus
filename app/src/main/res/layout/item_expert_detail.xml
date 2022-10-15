@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.tradeonline.ui.main.expert.model.UserFollowingListResponse" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@android:color/transparent">
+
+        <com.tistory.zladnrms.roundablelayout.RoundableLayout
+            android:id="@+id/rlExpertDetail"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:backgroundColor="@color/lightBackgroundColor"
+            app:cornerAll="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeLineColor="@color/solitude"
+            app:strokeLineWidth="1dp">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                style="?android:progressBarStyleHorizontal"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:elevation="3dp"
+                progressAnimation="@{true}"
+                android:rotation="-90"
+                android:progressDrawable="@drawable/progress_bar"
+                app:layout_constraintBottom_toBottomOf="@+id/rlImage"
+                app:layout_constraintEnd_toEndOf="@+id/rlImage"
+                app:layout_constraintStart_toStartOf="@+id/rlImage"
+                app:layout_constraintTop_toTopOf="@+id/rlImage" />
+
+            <com.tistory.zladnrms.roundablelayout.RoundableLayout
+                android:id="@+id/rlImage"
+                setRoundableDirectionColor="@{item.direction}"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="5dp"
+                app:backgroundColor="@color/white"
+                app:cornerAll="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    setDirection="@{item.direction}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/StyleBoldText20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:singleLine="true"
+                android:text="@{item.assetCode}"
+                app:layout_constraintStart_toEndOf="@+id/rlImage"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Nargile" />
+
+            <TextView
+                android:id="@+id/tvTitleAssetName"
+                style="@style/StyleMediumText12_Antrasit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="@{item.assetName}"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvTitle"
+                tools:text="Nargile" />
+
+            <TextView
+                android:id="@+id/tvDailyTitle"
+                style="@style/StyleMediumText12_DarkGrey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/title_expert_detail_daily"
+                app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+            <TextView
+                android:id="@+id/tvDailyAmount"
+                style="@style/StyleMediumText12_Antrasit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="0.0"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDailyTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvDailyTitle" />
+
+            <TextView
+                android:id="@+id/tvWeeklyTitle"
+                style="@style/StyleMediumText12_DarkGrey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/title_expert_detail_weekly"
+                app:layout_constraintStart_toStartOf="@+id/tvDailyTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvDailyTitle" />
+
+            <TextView
+                android:id="@+id/tvWeeklyAmount"
+                style="@style/StyleMediumText12_Antrasit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="0.0"
+                app:layout_constraintBottom_toBottomOf="@+id/tvWeeklyTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvWeeklyTitle" />
+
+        </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

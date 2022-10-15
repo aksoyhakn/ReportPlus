@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "174706739123",
+    "project_id": "trendline-4c601",
+    "storage_bucket": "trendline-4c601.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174706739123:android:f28c7572fb79d894bbadc6",
+        "android_client_info": {
+          "package_name": "com.example.tradeonline.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174706739123-tlm41b486vg202chs2vub3o6rmc67jen.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tradeonline.dev",
+            "certificate_hash": "970d75c70e13b981b16cde3ca45699f38e173cf0"
+          }
+        },
+        {
+          "client_id": "174706739123-48ktt69s87f0mtfpmbllpae15kl5ihkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3IUVso2XSEgGOnU2TZjR6RXUrqX4z6kE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174706739123-48ktt69s87f0mtfpmbllpae15kl5ihkd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "174706739123-11veacs2p6kfhif5ordp1b4omgn6ectu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.DursunDogan.TrendLine"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
