@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:174706739123:android:f28c7572fb79d894bbadc6",
         "android_client_info": {
-          "package_name": "com.example.tradeonline.dev"
+          "package_name": "com.example.trendline.dev"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "174706739123-tlm41b486vg202chs2vub3o6rmc67jen.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.tradeonline.dev",
+            "package_name": "com.example.trendline.dev",
             "certificate_hash": "970d75c70e13b981b16cde3ca45699f38e173cf0"
           }
         },

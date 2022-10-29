@@ -7,11 +7,11 @@
 
         <variable
             name="viewModel"
-            type="com.example.tradeonline.ui.main.technicalAnalysisDetail.TechnicalAnalysisDetailViewModel" />
+            type="com.example.trendline.ui.main.technicalAnalysisDetail.TechnicalAnalysisDetailViewModel" />
 
         <variable
             name="fragment"
-            type="com.example.tradeonline.ui.main.technicalAnalysisDetail.TechnicalAnalysisDetailFragment" />
+            type="com.example.trendline.ui.main.technicalAnalysisDetail.TechnicalAnalysisDetailFragment" />
 
     </data>
 

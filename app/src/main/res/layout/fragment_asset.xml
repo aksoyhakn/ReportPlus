@@ -7,11 +7,11 @@
 
         <variable
             name="viewModel"
-            type="com.example.tradeonline.ui.main.asset.AssetViewModel" />
+            type="com.example.trendline.ui.main.asset.AssetViewModel" />
 
         <variable
             name="fragment"
-            type="com.example.tradeonline.ui.main.asset.AssetFragment" />
+            type="com.example.trendline.ui.main.asset.AssetFragment" />
 
     </data>
 
@@ -142,25 +142,25 @@
             </com.tistory.zladnrms.roundablelayout.RoundableLayout>
 
             <TextView
-                android:id="@+id/tvLoseLevel"
+                android:id="@+id/tvPivot"
                 style="@style/StyleMediumText14_Antrasit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Zarar Kes Seviyesi"
+                android:text="Pivot"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTrend" />
 
             <TextView
-                android:id="@+id/tvLoseLevelAmount"
+                android:id="@+id/tvPivotAmount"
                 style="@style/StyleMediumText12_Antrasit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:text="0.0"
-                app:layout_constraintBottom_toBottomOf="@+id/tvLoseLevel"
+                android:text="@{viewModel.data.pivotPrice}"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPivot"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvLoseLevel" />
+                app:layout_constraintTop_toTopOf="@+id/tvPivot" />
 
             <TextView
                 android:id="@+id/tvTarget"
@@ -168,9 +168,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Hedef"
+                android:text="Pozitif senaryo hedef fiyat"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvLoseLevel" />
+                app:layout_constraintTop_toBottomOf="@+id/tvPivot" />
 
             <TextView
                 android:id="@+id/tvTargetAmount"
@@ -178,10 +178,31 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:text="0.0"
+                android:text="@{viewModel.data.targetPrice}"
                 app:layout_constraintBottom_toBottomOf="@+id/tvTarget"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tvTarget" />
+
+            <TextView
+                android:id="@+id/tvStopLoss"
+                style="@style/StyleMediumText14_Antrasit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Negatif senaryo hedef fiyat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTarget" />
+
+            <TextView
+                android:id="@+id/tvStopLossAmount"
+                style="@style/StyleMediumText12_Antrasit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="@{viewModel.data.stopLossPrice}"
+                app:layout_constraintBottom_toBottomOf="@+id/tvStopLoss"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvStopLoss" />
 
 
         </com.tistory.zladnrms.roundablelayout.RoundableLayout>

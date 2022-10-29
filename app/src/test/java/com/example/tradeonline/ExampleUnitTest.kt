@@ -1,4 +1,4 @@
-package com.example.tradeonline
+package com.example.trendline
 
 import org.junit.Test
 

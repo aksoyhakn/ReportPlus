@@ -7,11 +7,11 @@
 
         <variable
             name="viewModel"
-            type="com.example.tradeonline.ui.main.technicalAnalysis.TechnicalAnalysisViewModel" />
+            type="com.example.trendline.ui.main.technicalAnalysis.TechnicalAnalysisViewModel" />
 
         <variable
             name="listener"
-            type="com.example.tradeonline.ui.main.technicalAnalysis.adapter.TechnicalAnalysisAdapter.ListenerTechnicalAnalysis" />
+            type="com.example.trendline.ui.main.technicalAnalysis.adapter.TechnicalAnalysisAdapter.ListenerTechnicalAnalysis" />
 
 
     </data>

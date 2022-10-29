@@ -7,11 +7,11 @@
 
         <variable
             name="viewModel"
-            type="com.example.tradeonline.ui.main.indicator.IndicatorViewModel" />
+            type="com.example.trendline.ui.main.indicator.IndicatorViewModel" />
 
         <variable
             name="listener"
-            type="com.example.tradeonline.ui.main.indicator.adapter.IndicatorAdapter.ListenerIndicator" />
+            type="com.example.trendline.ui.main.indicator.adapter.IndicatorAdapter.ListenerIndicator" />
 
 
     </data>

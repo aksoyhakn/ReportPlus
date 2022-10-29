@@ -7,7 +7,7 @@
 
         <variable
             name="errorModel"
-            type="com.example.tradeonline.data.service.util.ErrorModel" />
+            type="com.example.trendline.data.service.util.ErrorModel" />
 
     </data>
 
@@ -113,7 +113,7 @@
 
                 </com.tistory.zladnrms.roundablelayout.RoundableLayout>
 
-                <com.example.tradeonline.ui.common.component.button.IyiyasaButton
+                <com.example.trendline.ui.common.component.button.IyiyasaButton
                     android:id="@+id/btn_click"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"

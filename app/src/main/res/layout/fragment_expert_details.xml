@@ -7,15 +7,15 @@
 
         <variable
             name="viewModel"
-            type="com.example.tradeonline.ui.main.expertdetail.ExpertDetailsViewModel" />
+            type="com.example.trendline.ui.main.expertdetail.ExpertDetailsViewModel" />
 
         <variable
             name="listener"
-            type="com.example.tradeonline.ui.main.expertdetail.adapter.ExpertDetailAdapter.ListenerExpertDetail" />
+            type="com.example.trendline.ui.main.expertdetail.adapter.ExpertDetailAdapter.ListenerExpertDetail" />
 
         <variable
             name="fragment"
-            type="com.example.tradeonline.ui.main.expertdetail.ExpertDetailsFragment" />
+            type="com.example.trendline.ui.main.expertdetail.ExpertDetailsFragment" />
 
 
     </data>
