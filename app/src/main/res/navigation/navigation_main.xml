@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_expert"
-        android:name="com.example.trendline.ui.main.expert.ExpertFragment"
+        android:name="com.aksoyhakn.reportplus.ui.main.expert.ExpertFragment"
         android:label="@string/title_experts"
         tools:layout="@layout/fragment_expert">
         <action
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/navigation_journal"
-        android:name="com.example.trendline.ui.main.journal.JournalFragment"
+        android:name="com.aksoyhakn.reportplus.ui.main.journal.JournalFragment"
         android:label="@string/title_journal"
         tools:layout="@layout/fragment_journal">
 
@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/navigation_indicator"
-        android:name="com.example.trendline.ui.main.indicator.IndicatorFragment"
+        android:name="com.aksoyhakn.reportplus.ui.main.indicator.IndicatorFragment"
         android:label="@string/title_indicator"
         tools:layout="@layout/fragment_indicator" >
 
@@ -53,7 +53,7 @@
 
     <fragment
         android:id="@+id/navigation_technical_analysis"
-        android:name="com.example.trendline.ui.main.technicalAnalysis.TechnicalAnalysisFragment"
+        android:name="com.aksoyhakn.reportplus.ui.main.technicalAnalysis.TechnicalAnalysisFragment"
         android:label="@string/title_technical_analysis"
         tools:layout="@layout/fragment_technical_analysis">
 
@@ -69,7 +69,7 @@
 
     <fragment
         android:id="@+id/expertDetail"
-        android:name="com.example.trendline.ui.main.expertdetail.ExpertDetailsFragment"
+        android:name="com.aksoyhakn.reportplus.ui.main.expertdetail.ExpertDetailsFragment"
         tools:layout="@layout/fragment_expert_details">
         <action
             android:id="@+id/action_navigation_expert_detail_to_asset"
@@ -82,22 +82,22 @@
 
     <fragment
         android:id="@+id/asset"
-        android:name="com.example.trendline.ui.main.asset.AssetFragment"
+        android:name="com.aksoyhakn.reportplus.ui.main.asset.AssetFragment"
         tools:layout="@layout/fragment_asset" />
 
     <fragment
         android:id="@+id/journalDetail"
-        android:name="com.example.trendline.ui.main.jounalDetail.JournalDetailFragment"
+        android:name="com.aksoyhakn.reportplus.ui.main.jounalDetail.JournalDetailFragment"
         tools:layout="@layout/fragment_journal_detail" />
 
     <fragment
         android:id="@+id/technicalAnalysisDetail"
-        android:name="com.example.trendline.ui.main.technicalAnalysisDetail.TechnicalAnalysisDetailFragment"
+        android:name="com.aksoyhakn.reportplus.ui.main.technicalAnalysisDetail.TechnicalAnalysisDetailFragment"
         tools:layout="@layout/fragment_technical_analysis_detail" />
 
     <fragment
         android:id="@+id/indicatorDetail"
-        android:name="com.example.trendline.ui.main.indicatorDetails.IndicatorDetail"
+        android:name="com.aksoyhakn.reportplus.ui.main.indicatorDetails.IndicatorDetail"
         tools:layout="@layout/fragment_indicator_detail" />
 
 </navigation>

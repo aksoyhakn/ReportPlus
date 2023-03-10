@@ -6,7 +6,7 @@
 
         <variable
             name="item"
-            type="com.example.trendline.ui.main.journal.model.JournalResponse" />
+            type="com.aksoyhakn.reportplus.ui.main.journal.model.JournalResponse" />
 
     </data>
 

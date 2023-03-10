@@ -6,7 +6,7 @@
 
         <variable
             name="item"
-            type="com.example.trendline.ui.main.indicator.model.IndicatorResponse" />
+            type="com.aksoyhakn.reportplus.ui.main.indicator.model.IndicatorResponse" />
 
     </data>
 

@@ -6,8 +6,8 @@ initial_folder = os.path.abspath(".")
 package_separator = "."
 
 #arguments
-old_package = "com.example.tradeonline"
-new_package = "com.example.trendline"
+old_package = "com.dursun.trendline"
+new_package = "com.aksoyhakn.reportplus"
 proguard = None
 
 def charge_proguard():

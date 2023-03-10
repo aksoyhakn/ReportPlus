@@ -7,11 +7,11 @@
 
         <variable
             name="viewModel"
-            type="com.example.trendline.ui.main.asset.AssetViewModel" />
+            type="com.aksoyhakn.reportplus.ui.main.asset.AssetViewModel" />
 
         <variable
             name="fragment"
-            type="com.example.trendline.ui.main.asset.AssetFragment" />
+            type="com.aksoyhakn.reportplus.ui.main.asset.AssetFragment" />
 
     </data>
 

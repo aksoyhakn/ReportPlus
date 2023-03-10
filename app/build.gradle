@@ -6,18 +6,39 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
-    id 'androidx.navigation.safeargs.kotlin'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('/Users/vb36347/Desktop/dursunDogan/dursun')
+            storePassword 'Sarp8963'
+            keyAlias 'dursunDogan'
+            keyPassword 'Sarp8963'
+        }
+    }
+
+    packagingOptions {
+        exclude("META-INF/DEPENDENCIES")
+        exclude("META-INF/LICENSE")
+        exclude("META-INF/LICENSE.txt")
+        exclude("META-INF/license.txt")
+        exclude("META-INF/NOTICE")
+        exclude("META-INF/NOTICE.txt")
+        exclude("META-INF/notice.txt")
+        exclude("META-INF/ASL2.0")
+        exclude("META-INF/*.kotlin_module")
+    }
+
     compileSdkVersion project.compileSdkVersion
     buildToolsVersion project.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.example.trendline"
+        applicationId "com.aksoyhakn.reportplus"
         minSdkVersion project.minSdkVersion
         targetSdkVersion project.targetSdkVersion
-        versionCode 3
+        versionCode 4
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -25,16 +46,10 @@ android {
     buildFeatures {
         dataBinding = true
     }
-/*
-    signingConfigs {
-        debug {
-            storeFile file('keystore/debug.keystore')
-            storePassword 'android'
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
-        }
+
+    lintOptions {
+        checkReleaseBuilds false
     }
-*/
 
     flavorDimensions "default"
 
@@ -42,14 +57,15 @@ android {
         debug {
             debuggable true
             minifyEnabled false
-            shrinkResources false
+            useProguard false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
             debuggable false
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 
@@ -58,13 +74,13 @@ android {
             resValue "string", "app_name", "TrendLine"
             buildConfigField("String", "BASE_URL", "\"http://testUrl.com/\"")
             buildConfigField 'Boolean', 'GADGET_ENABLED', 'true'
+            signingConfig signingConfigs.release
 
         }
         devFlavor {
             resValue "string", "app_name", "TrendLine - Dev"
             buildConfigField("String", "BASE_URL", "\"http://testUrl.com/\"")
             buildConfigField 'Boolean', 'GADGET_ENABLED', 'false'
-            applicationIdSuffix ".dev"
         }
     }
     compileOptions {
@@ -86,11 +102,10 @@ dependencies {
     implementation "androidx.multidex:multidex:$multidexVersion"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-    implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.2.0"
 
     //lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}"
-
 
 
     // Glide
@@ -123,27 +138,15 @@ dependencies {
     implementation "com.mikhaellopez:circularimageview:${circularImageVersion}"
     implementation "com.airbnb.android:lottie:${lottieVersion}"
 
-    //signalR
-    implementation "com.microsoft.signalr:signalr:${signalRVersion}"
-
-    //Barcode-Scanning
-    implementation "com.google.mlkit:barcode-scanning:${mlkitBarcodeVersion}"
-
-    // CameraX library
-    def camerax_version = "1.0.1"
-    implementation "androidx.camera:camera-camera2:$camerax_version"
-    implementation "androidx.camera:camera-lifecycle:$camerax_version"
-    implementation "androidx.camera:camera-view:1.0.0-alpha28"
-
     //Firebase
     implementation platform('com.google.firebase:firebase-bom:30.4.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
-    implementation 'com.google.firebase:firebase-messaging:23.0.8'
+    implementation 'com.google.firebase:firebase-messaging:23.1.2'
     implementation 'com.google.firebase:firebase-crashlytics'
     implementation 'com.google.firebase:firebase-config'
     implementation 'com.google.firebase:firebase-dynamic-links-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.3.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.0'
 
     //Room
     implementation "androidx.room:room-runtime:$roomVersion"

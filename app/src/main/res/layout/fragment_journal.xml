@@ -7,11 +7,11 @@
 
         <variable
             name="viewModel"
-            type="com.example.trendline.ui.main.journal.JournalViewModel" />
+            type="com.aksoyhakn.reportplus.ui.main.journal.JournalViewModel" />
 
         <variable
             name="listener"
-            type="com.example.trendline.ui.main.journal.adapter.JournalAdapter.ListenerJournal" />
+            type="com.aksoyhakn.reportplus.ui.main.journal.adapter.JournalAdapter.ListenerJournal" />
 
 
     </data>

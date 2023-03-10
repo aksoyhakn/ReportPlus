@@ -7,15 +7,15 @@
 
         <variable
             name="viewModel"
-            type="com.example.trendline.ui.main.indicatorDetails.IndicatorDetailViewModel" />
+            type="com.aksoyhakn.reportplus.ui.main.indicatorDetails.IndicatorDetailViewModel" />
 
         <variable
             name="fragment"
-            type="com.example.trendline.ui.main.indicatorDetails.IndicatorDetail" />
+            type="com.aksoyhakn.reportplus.ui.main.indicatorDetails.IndicatorDetail" />
 
         <variable
             name="listener"
-            type="com.example.trendline.ui.main.indicatorDetails.adapter.IndicatorDetailAdapter.ListenerIndicatorDetail" />
+            type="com.aksoyhakn.reportplus.ui.main.indicatorDetails.adapter.IndicatorDetailAdapter.ListenerIndicatorDetail" />
 
     </data>
 

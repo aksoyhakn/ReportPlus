@@ -7,15 +7,15 @@
 
         <variable
             name="viewModel"
-            type="com.example.trendline.ui.main.expertdetail.ExpertDetailsViewModel" />
+            type="com.aksoyhakn.reportplus.ui.main.expertdetail.ExpertDetailsViewModel" />
 
         <variable
             name="listener"
-            type="com.example.trendline.ui.main.expertdetail.adapter.ExpertDetailAdapter.ListenerExpertDetail" />
+            type="com.aksoyhakn.reportplus.ui.main.expertdetail.adapter.ExpertDetailAdapter.ListenerExpertDetail" />
 
         <variable
             name="fragment"
-            type="com.example.trendline.ui.main.expertdetail.ExpertDetailsFragment" />
+            type="com.aksoyhakn.reportplus.ui.main.expertdetail.ExpertDetailsFragment" />
 
 
     </data>

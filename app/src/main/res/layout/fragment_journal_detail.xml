@@ -7,11 +7,11 @@
 
         <variable
             name="viewModel"
-            type="com.example.trendline.ui.main.jounalDetail.JournalDetailViewModel" />
+            type="com.aksoyhakn.reportplus.ui.main.jounalDetail.JournalDetailViewModel" />
 
         <variable
             name="fragment"
-            type="com.example.trendline.ui.main.jounalDetail.JournalDetailFragment" />
+            type="com.aksoyhakn.reportplus.ui.main.jounalDetail.JournalDetailFragment" />
 
 
     </data>
