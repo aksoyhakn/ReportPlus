@@ -61,7 +61,7 @@ class SplashFragment :
 
     private fun initRemoteConfig() {
 
-        val remoteConfig: FirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
+     /*   val remoteConfig: FirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
         val configSettings = FirebaseRemoteConfigSettings.Builder()
             .setMinimumFetchIntervalInSeconds(360L)
             .build()
@@ -89,10 +89,20 @@ class SplashFragment :
             .addOnCanceledListener {
                 requireContext().showDialog(UnknownHostException(), {}, {})
             }
+
+      */
+
+        navigateToDashboard()
     }
 
-    private fun navigateToDashboard(data: RemoteConfig) {
-        remoteCounter = data.pageCounter ?: 4
+    private fun navigateToDashboard(data: RemoteConfig?=null) {
+
+        context?.handler(500) {
+            Navigation.findNavController(dataBinding.root)
+                .navigate(R.id.action_splashFragment_to_homeFragment)
+        }
+
+       /* remoteCounter = data.pageCounter ?: 4
         if (data.isForceUpdate != true ) {
 
             context?.handler(500) {
@@ -122,5 +132,7 @@ class SplashFragment :
             }
 
         }
+        */
     }
+
 }

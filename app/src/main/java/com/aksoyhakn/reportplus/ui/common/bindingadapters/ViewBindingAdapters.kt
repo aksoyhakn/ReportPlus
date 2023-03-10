@@ -88,31 +88,6 @@ object ViewBindingAdapters {
         }
     }
 
-    @JvmStatic
-    @BindingAdapter("setDirection")
-    fun setDirection(view: ImageView, direction: String?) {
-        direction.notNull {
-            if (direction != "DOWN") {
-                view.setImageResource(R.drawable.ic_arrow_up)
-            } else {
-                view.setImageResource(R.drawable.ic_arrow_down)
-            }
-        }
-
-    }
-
-    @JvmStatic
-    @BindingAdapter("setRoundableDirectionColor")
-    fun setRoundableDirectionColor(view: RoundableLayout, direction: String?) {
-        direction.notNull {
-            if (direction != "DOWN") {
-                view.backgroundColor = view.context.getColor(R.color.green)
-            } else {
-                view.backgroundColor = view.context.getColor(R.color.mercan)
-            }
-        }
-
-    }
 
     @SuppressLint("ObjectAnimatorBinding")
     @JvmStatic
