@@ -45,32 +45,6 @@ abstract class BaseActivity<T : ViewDataBinding>(
         setToolbar()
         bindScreen()
 
-        toogleLoading()
-        toogleErrorOrFail()
-    }
-
-    private fun toogleLoading() {
-        getBaseViewModel()?.activityLoading?.observe(this, Observer {
-            if (it) {
-                showLoading()
-            } else {
-                handler(200) {
-                    hideLoading()
-                }
-            }
-        })
-    }
-
-    private fun toogleErrorOrFail() {
-        getBaseViewModel()?.activityErrorOrFail?.observe(this, Observer {
-            hideLoading()
-            showDialog(it, {
-                onBackPressed()
-            }, {
-                onBackPressed()
-            }
-            )
-        })
     }
 
     private fun setToolbar() {

@@ -9,95 +9,18 @@
         android:id="@+id/navigation_expert"
         android:name="com.aksoyhakn.reportplus.ui.main.expert.ExpertFragment"
         android:label="@string/title_experts"
-        tools:layout="@layout/fragment_expert">
-        <action
-            android:id="@+id/action_navigation_expert_to_expertDetail"
-            app:destination="@id/expertDetail"
-            app:enterAnim="@anim/enter_from_right"
-            app:exitAnim="@anim/exit_to_left"
-            app:popEnterAnim="@anim/enter_from_left"
-            app:popExitAnim="@anim/exit_to_right" />
-    </fragment>
+        tools:layout="@layout/fragment_expert"/>
 
     <fragment
         android:id="@+id/navigation_journal"
         android:name="com.aksoyhakn.reportplus.ui.main.journal.JournalFragment"
         android:label="@string/title_journal"
-        tools:layout="@layout/fragment_journal">
-
-        <action
-            android:id="@+id/action_navigation_journal_to_journal_detail"
-            app:destination="@id/journalDetail"
-            app:enterAnim="@anim/enter_from_down"
-            app:exitAnim="@anim/exit_from_up"
-            app:popEnterAnim="@anim/enter_from_up"
-            app:popExitAnim="@anim/exit_from_down" />
-
-    </fragment>
+        tools:layout="@layout/fragment_journal"/>
 
     <fragment
         android:id="@+id/navigation_indicator"
         android:name="com.aksoyhakn.reportplus.ui.main.indicator.IndicatorFragment"
         android:label="@string/title_indicator"
-        tools:layout="@layout/fragment_indicator" >
-
-        <action
-            android:id="@+id/action_navigation_indicator_to_indicator_detail"
-            app:destination="@id/indicatorDetail"
-            app:enterAnim="@anim/enter_from_down"
-            app:exitAnim="@anim/exit_from_up"
-            app:popEnterAnim="@anim/enter_from_up"
-            app:popExitAnim="@anim/exit_from_down" />
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/navigation_technical_analysis"
-        android:name="com.aksoyhakn.reportplus.ui.main.technicalAnalysis.TechnicalAnalysisFragment"
-        android:label="@string/title_technical_analysis"
-        tools:layout="@layout/fragment_technical_analysis">
-
-        <action
-            android:id="@+id/action_navigation_technical_analysis_to_technical_analysis_detail"
-            app:destination="@id/technicalAnalysisDetail"
-            app:enterAnim="@anim/enter_from_down"
-            app:exitAnim="@anim/exit_from_up"
-            app:popEnterAnim="@anim/enter_from_up"
-            app:popExitAnim="@anim/exit_from_down" />
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/expertDetail"
-        android:name="com.aksoyhakn.reportplus.ui.main.expertdetail.ExpertDetailsFragment"
-        tools:layout="@layout/fragment_expert_details">
-        <action
-            android:id="@+id/action_navigation_expert_detail_to_asset"
-            app:destination="@id/asset"
-            app:enterAnim="@anim/enter_from_right"
-            app:exitAnim="@anim/exit_to_left"
-            app:popEnterAnim="@anim/enter_from_left"
-            app:popExitAnim="@anim/exit_to_right" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/asset"
-        android:name="com.aksoyhakn.reportplus.ui.main.asset.AssetFragment"
-        tools:layout="@layout/fragment_asset" />
-
-    <fragment
-        android:id="@+id/journalDetail"
-        android:name="com.aksoyhakn.reportplus.ui.main.jounalDetail.JournalDetailFragment"
-        tools:layout="@layout/fragment_journal_detail" />
-
-    <fragment
-        android:id="@+id/technicalAnalysisDetail"
-        android:name="com.aksoyhakn.reportplus.ui.main.technicalAnalysisDetail.TechnicalAnalysisDetailFragment"
-        tools:layout="@layout/fragment_technical_analysis_detail" />
-
-    <fragment
-        android:id="@+id/indicatorDetail"
-        android:name="com.aksoyhakn.reportplus.ui.main.indicatorDetails.IndicatorDetail"
-        tools:layout="@layout/fragment_indicator_detail" />
+        tools:layout="@layout/fragment_indicator" />
 
 </navigation>

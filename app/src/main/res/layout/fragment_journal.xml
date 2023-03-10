@@ -9,55 +9,27 @@
             name="viewModel"
             type="com.aksoyhakn.reportplus.ui.main.journal.JournalViewModel" />
 
-        <variable
-            name="listener"
-            type="com.aksoyhakn.reportplus.ui.main.journal.adapter.JournalAdapter.ListenerJournal" />
-
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/StyleBackgroundColor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        style="@style/FragmentBackground"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="600dp"
-            android:layout_height="400dp"
-            style="@style/StyleBackgroundImage"
-            android:scaleType="fitCenter"
-            android:translationX="150dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/rvJournal" />
-
         <TextView
-            android:id="@+id/tvJournaltitle"
-            style="@style/StyleTitle"
+            android:id="@+id/tvExpertTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="50dp"
-            android:text="@string/title_journal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvJournal"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="12dp"
-            android:orientation="vertical"
-            android:overScrollMode="never"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:text="B"
+            android:textColor="@color/backgroundDark"
+            android:textSize="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvJournaltitle"
-            app:spanCount="3"
-            bind:setJournalData="@{viewModel.journalList}"
-            bind:setJournalListener="@{listener}" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

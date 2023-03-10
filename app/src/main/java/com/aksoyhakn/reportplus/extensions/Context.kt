@@ -218,10 +218,6 @@ fun Context.showDialog(
             else -> {}
         }
 
-        binding.btnClick.setSafeOnClickListener {
-            dialog.dismiss()
-            listenerOkey()
-        }
         binding.ivClose.setSafeOnClickListener {
             dialog.dismiss()
             listenerCancel()
@@ -236,7 +232,7 @@ fun Context.errorString(error: ExceptionHandle.Companion.ERROR?): ErrorModel {
     return when (error) {
         ExceptionHandle.Companion.ERROR.SOCKET_TIMEOUT -> {
             ErrorModel(
-                resDrawable(R.drawable.ic_logo, null),
+                resDrawable(R.drawable.ic_search, null),
                 resString(R.string.error_network_title),
                 resString(R.string.error_network_description),
                 resString(R.string.error_network_buttontext)
@@ -245,7 +241,7 @@ fun Context.errorString(error: ExceptionHandle.Companion.ERROR?): ErrorModel {
 
         ExceptionHandle.Companion.ERROR.CONNECT_ERROR -> {
             ErrorModel(
-                resDrawable(R.drawable.ic_logo, null),
+                resDrawable(R.drawable.ic_search, null),
                 resString(R.string.error_network_title),
                 resString(R.string.error_network_description),
                 resString(R.string.error_network_buttontext)
@@ -253,7 +249,7 @@ fun Context.errorString(error: ExceptionHandle.Companion.ERROR?): ErrorModel {
         }
         else ->
             ErrorModel(
-                resDrawable(R.drawable.ic_logo, null),
+                resDrawable(R.drawable.ic_search, null),
                 resString(R.string.error_network_title),
                 resString(R.string.error_network_description),
                 resString(R.string.error_network_buttontext)

@@ -7,18 +7,9 @@
     <string name="error_network_canceltext">Vazgeç</string>
     <!-- Error - Network -->
 
-    <string name="title_experts">Uzman Yorumları</string>
-    <string name="title_expert_detail_list">Takip Listesi</string>
-    <string name="title_expert_detail_daily">Günlük Takip Listesi</string>
-    <string name="title_expert_detail_weekly">Haftalık Takip Listesi</string>
-    <string name="title_movie_details">Movie Details</string>
-    <string name="title_journal">Gündem</string>
-    <string name="title_tv_series_details">TVSeries Details</string>
-    <string name="title_tv_series_other_details">TVSeries Other Details</string>
-    <string name="title_indicator">Indicatörler</string>
-    <string name="title_indicator_detail">Indicatörler</string>
-    <string name="title_technical_analysis">Teknik Analiz</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_experts">A</string>
+    <string name="title_journal">B</string>
+    <string name="title_indicator">C</string>
 
     <string name="new_version">Yeni sürüm mevcut</string>
     <string name="new_version_description">Lütfen, uygulamayı yeni sürüme güncelleyin.</string>

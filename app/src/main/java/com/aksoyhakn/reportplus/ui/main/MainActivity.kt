@@ -81,15 +81,6 @@ class MainActivity : AppCompatActivity() {
                         true
                     }
                 }
-                R.id.navigation_technical_analysis -> {
-                    if (currentFragmentIndex == 3) {
-                        false
-                    } else {
-                        currentFragmentIndex = 3
-                        navController.navigate(R.id.navigation_technical_analysis)
-                        true
-                    }
-                }
                 else -> false
             }
 
@@ -109,7 +100,7 @@ class MainActivity : AppCompatActivity() {
     private fun listenForNavigationDestinationChanges() {
         navController.addOnDestinationChangedListener { _, destination, arguments ->
             when (destination.id) {
-                R.id.splashFragment, R.id.asset, R.id.expertDetail -> {
+                R.id.splashFragment-> {
                     hideBottomNavigationView()
                 }
                 else -> {
