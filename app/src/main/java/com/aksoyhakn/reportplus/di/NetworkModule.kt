@@ -8,8 +8,8 @@ import com.aksoyhakn.reportplus.app.ReportPlusApp
 import com.aksoyhakn.reportplus.data.preference.PreferenceHelper
 import com.aksoyhakn.reportplus.data.preference.PreferenceHelperImp
 import com.aksoyhakn.reportplus.data.service.LoggingInterceptor
-import com.aksoyhakn.reportplus.data.service.TrendLineDataSource
-import com.aksoyhakn.reportplus.data.service.TrendLineService
+import com.aksoyhakn.reportplus.data.service.ReportPlusDataSource
+import com.aksoyhakn.reportplus.data.service.ReportPlusService
 import com.aksoyhakn.reportplus.utils.Constants
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
@@ -86,15 +86,15 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideTradeOnlineService(okHttpClient: OkHttpClient): TrendLineService {
-        return provideRetrofit(okHttpClient).create(TrendLineService::class.java)
+    fun provideTradeOnlineService(okHttpClient: OkHttpClient): ReportPlusService {
+        return provideRetrofit(okHttpClient).create(ReportPlusService::class.java)
     }
 
     @Provides
     @Singleton
-    fun provideTrendLineClient(
-        trendLineService: TrendLineService
-    ): TrendLineDataSource {
-        return TrendLineDataSource(trendLineService)
+    fun provideReportPlusClient(
+        reportPlusService: ReportPlusService
+    ): ReportPlusDataSource {
+        return ReportPlusDataSource(reportPlusService)
     }
 }

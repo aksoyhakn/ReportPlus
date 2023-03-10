@@ -5,4 +5,4 @@ package com.aksoyhakn.reportplus.data.service
  * NargileyeFısıldayaAdam
  */
 
-interface TrendLineService {}
+interface ReportPlusService {}

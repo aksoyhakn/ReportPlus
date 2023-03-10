@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.aksoyhakn.reportplus.data.persistence.AppDatabase
-import com.aksoyhakn.reportplus.data.persistence.TrendLineDao
+import com.aksoyhakn.reportplus.data.persistence.BaseDao
 import com.aksoyhakn.reportplus.utils.Constants
 import com.aksoyhakn.reportplus.utils.analytics.AnalyticsHelper
 import com.aksoyhakn.reportplus.utils.analytics.FirebaseAnalyticsHelper
@@ -41,8 +41,8 @@ object PersistenceModule {
     }
 
     @Provides
-    fun provideTrendLineDao(appDatabase: AppDatabase): TrendLineDao {
-        return appDatabase.trendLineDao()
+    fun provideBaseDao(appDatabase: AppDatabase): BaseDao {
+        return appDatabase.baseDao()
     }
 
 }

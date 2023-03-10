@@ -11,5 +11,5 @@ import com.aksoyhakn.reportplus.data.persistence.entity.Data
 
 @Database(entities = [Data::class], version = 1, exportSchema = true)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun trendLineDao(): TrendLineDao
+    abstract fun baseDao(): BaseDao
 }

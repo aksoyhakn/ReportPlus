@@ -7,6 +7,6 @@ import javax.inject.Inject
  * NargileyeFısıldayaAdam
  */
 
-class TrendLineDataSource @Inject constructor(
-    private val trendLineService: TrendLineService
+class ReportPlusDataSource @Inject constructor(
+    private val reportPlusService: ReportPlusService
 ) {}

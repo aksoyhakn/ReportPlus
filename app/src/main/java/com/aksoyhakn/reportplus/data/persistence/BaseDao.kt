@@ -9,7 +9,7 @@ import com.aksoyhakn.reportplus.data.persistence.entity.Data
  */
 
 @Dao
-interface TrendLineDao {
+interface BaseDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertUser(user: Data)
 

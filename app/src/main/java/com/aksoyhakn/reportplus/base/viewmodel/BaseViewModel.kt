@@ -9,19 +9,10 @@ import com.aksoyhakn.reportplus.utils.SingleLiveData
  */
 
 open class BaseViewModel : ViewModel() {
-    var activityLoading = SingleLiveData<Boolean>()
-    protected fun toogleActivityLoading(status: Boolean) {
-        activityLoading.value = status
-    }
 
     var fragmentLoading = SingleLiveData<Boolean>()
     protected fun toogleFragmentLoading(status: Boolean) {
         fragmentLoading.value = status
-    }
-
-    var activityErrorOrFail = SingleLiveData<Any>()
-    protected fun activityErrorOrFail(status: Any) {
-        activityErrorOrFail.value = status
     }
 
     var fragmentErrorOrFail = SingleLiveData<Any>()
