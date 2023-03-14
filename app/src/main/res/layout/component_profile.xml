@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profile"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.tistory.zladnrms.roundablelayout.RoundableLayout
+            android:id="@+id/rlBackground"
+            android:layout_width="109dp"
+            android:layout_height="109dp"
+            app:backgroundColor="@android:color/white"
+            app:cornerAll="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/background_gradient_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+
+        <com.tistory.zladnrms.roundablelayout.RoundableLayout
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            app:backgroundColor="@android:color/white"
+            app:cornerAll="60dp"
+            app:layout_constraintBottom_toBottomOf="@+id/rlBackground"
+            app:layout_constraintEnd_toEndOf="@+id/rlBackground"
+            app:layout_constraintStart_toStartOf="@+id/rlBackground"
+            app:layout_constraintTop_toTopOf="@+id/rlBackground">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                bind:setImage="@{profile}" />
+
+        </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

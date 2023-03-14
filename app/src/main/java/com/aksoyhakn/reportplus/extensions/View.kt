@@ -199,3 +199,13 @@ fun View.zoomInAndOut(
         listener()
     }
 }
+
+
+fun View.hide() {
+    this.visibility = View.GONE
+}
+
+
+fun View.show() {
+    this.visibility = View.VISIBLE
+}

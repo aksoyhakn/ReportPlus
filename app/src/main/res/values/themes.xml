@@ -52,8 +52,16 @@
         <item name="bottomSheetStyle">@style/Widget.Design.BottomSheet.Modal</item>
     </style>
 
+
+    <!-- Report Plus -->
+
     <style name="FragmentBackground">
+        <item name="android:fitsSystemWindows">true</item>
         <item name="android:background">@color/backgroundLight</item>
+    </style>
+
+    <style name="StringColor">
+        <item name="android:textColor">@color/colorWhite</item>
     </style>
 
 

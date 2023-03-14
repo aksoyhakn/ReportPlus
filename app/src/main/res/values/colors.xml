@@ -13,6 +13,7 @@
     <color name="backgroundLight">#FFFFFF</color>
     <color name="darkv2">#1D1538</color>
     <color name="lightDark">#726F80</color>
+    <color name="grey6">#F2F2F2</color>
 
     <!-- gradient - color -->
     <color name="color1">#784CF3</color>

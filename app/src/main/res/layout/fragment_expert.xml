@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
 
     <data>
 
@@ -15,6 +16,15 @@
         android:layout_height="match_parent"
         style="@style/FragmentBackground"
         android:orientation="vertical">
+
+        <com.aksoyhakn.reportplus.ui.common.component.ComponentToolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="15dp"
+            bind:setToolbarIcon="@{@drawable/ic_premium}"
+            bind:setToolbarTitle="@{null}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
             android:id="@+id/tvExpertTitle"

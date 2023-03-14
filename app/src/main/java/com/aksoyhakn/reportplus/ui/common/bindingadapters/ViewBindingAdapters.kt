@@ -1,11 +1,10 @@
 package com.aksoyhakn.reportplus.ui.common.bindingadapters
 
-import android.animation.ObjectAnimator
-import android.annotation.SuppressLint
+import android.content.res.Configuration
 import android.graphics.PorterDuff
 import android.view.View
 import android.widget.ImageView
-import android.widget.ProgressBar
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.BindingAdapter
 import com.aksoyhakn.reportplus.R
 import com.aksoyhakn.reportplus.extensions.*
@@ -57,14 +56,40 @@ object ViewBindingAdapters {
 
     @JvmStatic
     @BindingAdapter("bind:setImageColorFilter")
-    fun setImageColorFilter(view: ImageView, isFilter: Boolean) {
-        if (isFilter) {
-            view.setColorFilter(
-                view.context.resColor(R.color.colorPrimary),
-                PorterDuff.Mode.SRC_IN
-            )
-        } else {
-            view.setColorFilter(view.context.resColor(R.color.colorPrimary), PorterDuff.Mode.SRC_IN)
+    fun setImageColorFilter(view: ImageView, isDarkMode: Boolean) {
+        when (AppCompatDelegate.getDefaultNightMode()) {
+            Configuration.UI_MODE_NIGHT_YES -> {
+                view.setColorFilter(view.context.resColor(R.color.lightDark), PorterDuff.Mode.SRC_IN)
+            }
+            else -> {
+                view.setColorFilter(view.context.resColor(R.color.dark), PorterDuff.Mode.SRC_IN)
+            }
+        }
+    }
+
+    @JvmStatic
+    @BindingAdapter("bind:setCategoryStrokeColorFilter")
+    fun setStrokeColorFilter(view: RoundableLayout, isColor: Boolean) {
+        when (AppCompatDelegate.getDefaultNightMode()) {
+            Configuration.UI_MODE_NIGHT_YES -> {
+                view.strokeLineColor = view.context.resColor(R.color.color1)
+            }
+            else -> {
+                view.strokeLineColor = view.context.resColor(R.color.darkv2)
+            }
+        }
+    }
+
+    @JvmStatic
+    @BindingAdapter("bind:setCategoryBackgroundColor")
+    fun setCategoryBackgroundColor(view: RoundableLayout, isColor: Boolean) {
+        when (AppCompatDelegate.getDefaultNightMode()) {
+            Configuration.UI_MODE_NIGHT_YES -> {
+                view.backgroundColor = view.context.resColor(R.color.lightDark)
+            }
+            else -> {
+                view.backgroundColor = view.context.resColor(R.color.darkv2)
+            }
         }
     }
 
@@ -88,14 +113,19 @@ object ViewBindingAdapters {
         }
     }
 
-
-    @SuppressLint("ObjectAnimatorBinding")
     @JvmStatic
-    @BindingAdapter("progressAnimation")
-    fun progressAnimation(view: ProgressBar, status: Boolean?) {
-        val progressAnimator = ObjectAnimator.ofInt(view, "progress", 0, 100)
-        progressAnimator.duration = 1000;
-        progressAnimator.start()
+    @BindingAdapter("bind:setSplashBackgroundColor")
+    fun setSplashBackgroundColor(view: ImageView, isNight: Boolean) {
+        when (AppCompatDelegate.getDefaultNightMode()) {
+            Configuration.UI_MODE_NIGHT_YES -> {
+                view.setImageResource(R.drawable.splash_dark)
+            }
+            else -> {
+                view.setImageResource(R.drawable.splash_light)
+            }
+        }
     }
+
+
 }
 

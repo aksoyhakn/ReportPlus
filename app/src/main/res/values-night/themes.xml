@@ -57,7 +57,12 @@
 
 
     <style name="FragmentBackground">
+        <item name="android:fitsSystemWindows">true</item>
         <item name="android:background">@color/backgroundDark</item>
+    </style>
+
+    <style name="StringColor">
+        <item name="android:textColor">@color/dark</item>
     </style>
 
     <!-- ReportPlus+ -->
