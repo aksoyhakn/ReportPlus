@@ -61,7 +61,7 @@
     </style>
 
     <style name="StringColor">
-        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textColor">@color/dark</item>
     </style>
 
 

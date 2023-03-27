@@ -1,20 +1,18 @@
 package com.aksoyhakn.reportplus.ui.main.splash
 
+import android.animation.ObjectAnimator
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.view.animation.DecelerateInterpolator
+import android.view.animation.LinearInterpolator
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.aksoyhakn.reportplus.R
 import com.aksoyhakn.reportplus.base.fragment.BaseFragment
 import com.aksoyhakn.reportplus.base.viewmodel.BaseViewModel
-import com.aksoyhakn.reportplus.data.service.model.FriendlyMessage
 import com.aksoyhakn.reportplus.databinding.FragmentSplashBinding
 import com.aksoyhakn.reportplus.extensions.*
-import com.aksoyhakn.reportplus.ui.main.MainActivity.Companion.remoteCounter
 import com.aksoyhakn.reportplus.ui.main.splash.model.RemoteConfig
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig
-import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
-import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 import java.net.UnknownHostException
 
@@ -97,9 +95,14 @@ class SplashFragment :
 
     private fun navigateToDashboard(data: RemoteConfig?=null) {
 
-        context?.handler(500) {
+        val animation = ObjectAnimator.ofInt(dataBinding.progressBar, "progress", 0,100)
+        animation.duration = 500
+        animation.interpolator = LinearInterpolator()
+        animation.start()
+
+        context?.handler(1000) {
             Navigation.findNavController(dataBinding.root)
-                .navigate(R.id.action_splashFragment_to_homeFragment)
+                .navigate(R.id.action_splashFragment_to_onBoarding)
         }
 
        /* remoteCounter = data.pageCounter ?: 4

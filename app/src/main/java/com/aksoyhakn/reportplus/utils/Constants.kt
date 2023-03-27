@@ -13,4 +13,8 @@ object Constants {
         const val DB_NAME = "report-plus"
         const val PREF_NAME = "report-plus-pref"
     }
+
+    object Banner {
+        const val BANNER_DATA = "banner_data"
+    }
 }

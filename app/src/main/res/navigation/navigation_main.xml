@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/navigation_expert"
-        android:name="com.aksoyhakn.reportplus.ui.main.expert.ExpertFragment"
+        android:name="com.aksoyhakn.reportplus.ui.main.main.MainFragment"
         android:label="@string/title_experts"
-        tools:layout="@layout/fragment_expert"/>
+        tools:layout="@layout/fragment_main"/>
 
     <fragment
         android:id="@+id/navigation_journal"

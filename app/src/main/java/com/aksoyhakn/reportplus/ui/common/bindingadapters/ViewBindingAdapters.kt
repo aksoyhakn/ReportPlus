@@ -72,10 +72,10 @@ object ViewBindingAdapters {
     fun setStrokeColorFilter(view: RoundableLayout, isColor: Boolean) {
         when (AppCompatDelegate.getDefaultNightMode()) {
             Configuration.UI_MODE_NIGHT_YES -> {
-                view.strokeLineColor = view.context.resColor(R.color.color1)
+                view.strokeLineColor = view.context.resColor(R.color.darkv2)
             }
             else -> {
-                view.strokeLineColor = view.context.resColor(R.color.darkv2)
+                view.strokeLineColor = view.context.resColor(R.color.color1)
             }
         }
     }
@@ -85,10 +85,10 @@ object ViewBindingAdapters {
     fun setCategoryBackgroundColor(view: RoundableLayout, isColor: Boolean) {
         when (AppCompatDelegate.getDefaultNightMode()) {
             Configuration.UI_MODE_NIGHT_YES -> {
-                view.backgroundColor = view.context.resColor(R.color.lightDark)
+                view.backgroundColor = view.context.resColor(R.color.darkv2)
             }
             else -> {
-                view.backgroundColor = view.context.resColor(R.color.darkv2)
+                view.backgroundColor = view.context.resColor(R.color.grey6)
             }
         }
     }

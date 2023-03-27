@@ -1,10 +1,11 @@
-package com.aksoyhakn.reportplus.ui.main.expert
+package com.aksoyhakn.reportplus.ui.main.main
 
 import androidx.fragment.app.viewModels
 import com.aksoyhakn.reportplus.R
 import com.aksoyhakn.reportplus.base.fragment.BaseFragment
 import com.aksoyhakn.reportplus.base.viewmodel.BaseViewModel
-import com.aksoyhakn.reportplus.databinding.FragmentExpertBinding
+import com.aksoyhakn.reportplus.databinding.FragmentMainBinding
+import com.aksoyhakn.reportplus.ui.main.main.adapter.MainCategoryAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -12,15 +13,20 @@ import dagger.hilt.android.AndroidEntryPoint
  * NargileyeFısıldayaAdam
  */
 
-
 @AndroidEntryPoint
-class ExpertFragment : BaseFragment<FragmentExpertBinding>(R.layout.fragment_expert) {
+class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main),
+    MainCategoryAdapter.ListenerMainCategory {
 
-    private val viewModel by viewModels<ExpertViewModel>()
+    private val viewModel by viewModels<MainViewModel>()
 
     override fun getBaseViewModel(): BaseViewModel = this.viewModel
 
     override fun bindScreen() {
         dataBinding.viewModel = viewModel
+        dataBinding.listener = this
+    }
+
+    override fun clickMainCategory(item: String) {
+
     }
 }

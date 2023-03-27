@@ -50,7 +50,7 @@ class ComponentProfile : ConstraintLayout {
 
     companion object {
 
-        @JvmStatic
+     /*   @JvmStatic
         @BindingAdapter("bind:setProfile")
         fun setProfile(
             view: ComponentProfile?,
@@ -60,5 +60,7 @@ class ComponentProfile : ConstraintLayout {
                 view?.setProfile(it)
             }
         }
+
+      */
     }
 }

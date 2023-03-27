@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -87,12 +86,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun showBottomNavigationView() {
+    private fun showBottomNavigationView() {
         isHideNavigate = false
         navView.visibility = View.VISIBLE
     }
 
-    fun hideBottomNavigationView() {
+    private fun hideBottomNavigationView() {
         isHideNavigate = true
         navView.visibility = View.GONE
     }
@@ -100,7 +99,7 @@ class MainActivity : AppCompatActivity() {
     private fun listenForNavigationDestinationChanges() {
         navController.addOnDestinationChangedListener { _, destination, arguments ->
             when (destination.id) {
-                R.id.splashFragment-> {
+                R.id.splashFragment, R.id.onBoardingFragment -> {
                     hideBottomNavigationView()
                 }
                 else -> {
@@ -108,10 +107,6 @@ class MainActivity : AppCompatActivity() {
 
                 }
             }
-            /*  if (destination.id != R.id.splashFragment)
-                  showBottomNavigationView()
-              else
-                  hideBottomNavigationView()*/
         }
     }
 
