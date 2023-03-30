@@ -36,25 +36,39 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/ivSettings"
+                    android:id="@+id/ivBack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_settings"
-                    app:layout_constraintBottom_toBottomOf="@+id/ivPremium"
+                    android:background="@drawable/ic_back"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/ivPremium"
-                    bind:setImageColorFilter="@{true}" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/ivAppIcon"
+                    android:layout_width="100dp"
+                    android:layout_height="15dp"
                     android:background="@drawable/app_title"
                     android:gravity="center"
-                    app:layout_constraintBottom_toBottomOf="@+id/ivPremium"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivBack"
                     app:layout_constraintEnd_toStartOf="@+id/ivPremium"
-                    app:layout_constraintStart_toEndOf="@+id/ivSettings"
-                    app:layout_constraintTop_toTopOf="@+id/ivPremium" />
+                    app:layout_constraintStart_toEndOf="@+id/ivBack"
+                    app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+                <TextView
+                    android:id="@+id/tvAppTitle"
+                    style="@style/StringColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="@+id/ivAppIcon"
+                    app:layout_constraintStart_toStartOf="@+id/ivAppIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/ivAppIcon" />
 
                 <ImageView
                     android:id="@+id/ivPremium"
@@ -63,9 +77,9 @@
                     android:layout_marginVertical="10dp"
                     android:background="@drawable/ic_premium"
                     android:visibility="visible"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivBack"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="@+id/ivBack" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -59,11 +59,11 @@ object ViewBindingAdapters {
     fun setImageColorFilter(view: ImageView, isDarkMode: Boolean) {
         when (AppCompatDelegate.getDefaultNightMode()) {
             Configuration.UI_MODE_NIGHT_YES -> {
-                view.setColorFilter(view.context.resColor(R.color.dark), PorterDuff.Mode.SRC_IN)
+                // view.setColorFilter(view.context.resColor(R.color.dark), PorterDuff.Mode.SRC_IN)
                 view.setImageResource(R.drawable.ic_settings)
             }
             else -> {
-                view.setColorFilter(view.context.resColor(R.color.dark), PorterDuff.Mode.SRC_IN)
+                //view.setColorFilter(view.context.resColor(R.color.dark), PorterDuff.Mode.SRC_IN)
                 view.setImageResource(R.drawable.ic_settings_dark)
             }
         }
@@ -124,6 +124,20 @@ object ViewBindingAdapters {
             }
             else -> {
                 view.setImageResource(R.drawable.splash_light)
+            }
+        }
+    }
+
+
+    @JvmStatic
+    @BindingAdapter("bind:setViewColorFilter")
+    fun setViewColorFilter(view: View, isDarkMode: Boolean) {
+        when (AppCompatDelegate.getDefaultNightMode()) {
+            Configuration.UI_MODE_NIGHT_YES -> {
+                view.setBackgroundColor(view.resColor(R.color.lightDark, null))
+            }
+            else -> {
+                view.setBackgroundColor(view.resColor(R.color.darkv2, null))
             }
         }
     }

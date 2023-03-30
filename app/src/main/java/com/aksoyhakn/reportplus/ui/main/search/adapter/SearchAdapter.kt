@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.aksoyhakn.reportplus.R
 import com.aksoyhakn.reportplus.databinding.ItemSearchBinding
 import com.aksoyhakn.reportplus.extensions.isNotNull
+import com.aksoyhakn.reportplus.extensions.setSafeOnClickListener
 
 
 class SearchAdapter(
@@ -40,6 +41,9 @@ class SearchAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bindData(item: String, position: Int, lastPosition: Int) {
+            binding.rlItem.setSafeOnClickListener {
+                onClick(item)
+            }
             binding.executePendingBindings()
         }
     }

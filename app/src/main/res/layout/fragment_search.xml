@@ -39,9 +39,21 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_back"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivAppIcon"
+                android:layout_width="100dp"
+                android:layout_height="15dp"
+                android:background="@drawable/app_title"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+                app:layout_constraintEnd_toStartOf="@+id/ivPremium"
+                app:layout_constraintStart_toEndOf="@+id/ivBack"
+                app:layout_constraintTop_toTopOf="@+id/ivBack" />
 
             <TextView
                 android:id="@+id/tvAppTitle"
@@ -50,11 +62,11 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Search"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/ivBack"
-                app:layout_constraintEnd_toStartOf="@+id/ivPremium"
-                app:layout_constraintStart_toEndOf="@+id/ivBack"
-                app:layout_constraintTop_toTopOf="@+id/ivBack" />
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/ivAppIcon"
+                app:layout_constraintStart_toStartOf="@+id/ivAppIcon"
+                app:layout_constraintTop_toBottomOf="@+id/ivAppIcon" />
 
             <ImageView
                 android:id="@+id/ivPremium"

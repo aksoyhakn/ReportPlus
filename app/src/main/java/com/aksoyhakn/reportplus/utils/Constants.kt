@@ -17,4 +17,8 @@ object Constants {
     object Banner {
         const val BANNER_DATA = "banner_data"
     }
+
+    object Download {
+        const val DOWNLOAD_DATA = "download_data"
+    }
 }

@@ -12,6 +12,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rlItem"
         style="@style/FragmentBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,9 +22,9 @@
             android:id="@+id/rlProfile"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginVertical="10dp"
             app:backgroundColor="@android:color/white"
             app:cornerAll="60dp"
-            android:layout_marginVertical="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -107,9 +108,9 @@
 
         <View
             android:layout_width="match_parent"
-            android:background="@color/dark"
+            android:layout_height="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_height="1dp" />
+            bind:setViewColorFilter="@{true}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

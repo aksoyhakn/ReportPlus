@@ -16,12 +16,20 @@
         <action
             android:id="@+id/action_splashFragment_to_homeFragment"
             app:destination="@id/navigation_dashboard"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
             app:popUpTo="@+id/nav_app"
             app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/action_splashFragment_to_onBoarding"
             app:destination="@id/onBoardingFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
             app:popUpTo="@+id/nav_app"
             app:popUpToInclusive="true" />
 
@@ -37,6 +45,10 @@
         <action
             android:id="@+id/action_onBoarding_to_homeFragment"
             app:destination="@id/navigation_dashboard"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right"
             app:popUpTo="@+id/nav_app"
             app:popUpToInclusive="true" />
 

@@ -9,6 +9,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.aksoyhakn.reportplus.R
+import com.aksoyhakn.reportplus.extensions.handler
 import com.aksoyhakn.reportplus.extensions.initStatusBar
 import com.google.android.gms.ads.MobileAds
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -53,30 +54,30 @@ class MainActivity : AppCompatActivity() {
     private fun bottomNavListener() {
         navView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.navigation_expert -> {
+                R.id.navigation_main -> {
                     if (currentFragmentIndex == 0) {
                         false
                     } else {
                         currentFragmentIndex = 0
-                        navController.navigate(R.id.navigation_expert)
+                        navController.navigate(R.id.navigation_main)
                         true
                     }
                 }
-                R.id.navigation_journal -> {
+                R.id.navigation_search -> {
                     if (currentFragmentIndex == 1) {
                         false
                     } else {
                         currentFragmentIndex = 1
-                        navController.navigate(R.id.navigation_journal)
+                        navController.navigate(R.id.navigation_search)
                         true
                     }
                 }
-                R.id.navigation_indicator -> {
+                R.id.navigation_settings -> {
                     if (currentFragmentIndex == 2) {
                         false
                     } else {
                         currentFragmentIndex = 2
-                        navController.navigate(R.id.navigation_indicator)
+                        navController.navigate(R.id.navigation_settings)
                         true
                     }
                 }
@@ -88,23 +89,27 @@ class MainActivity : AppCompatActivity() {
 
     private fun showBottomNavigationView() {
         isHideNavigate = false
-        navView.visibility = View.VISIBLE
+        handler(50){
+            navView.visibility = View.VISIBLE
+        }
+
     }
 
     private fun hideBottomNavigationView() {
         isHideNavigate = true
-        navView.visibility = View.GONE
+        handler(50){
+            navView.visibility = View.GONE
+        }
     }
 
     private fun listenForNavigationDestinationChanges() {
         navController.addOnDestinationChangedListener { _, destination, arguments ->
             when (destination.id) {
-                R.id.splashFragment, R.id.onBoardingFragment -> {
+                R.id.splashFragment, R.id.onBoardingFragment, R.id.downloadFragment -> {
                     hideBottomNavigationView()
                 }
                 else -> {
                     showBottomNavigationView()
-
                 }
             }
         }

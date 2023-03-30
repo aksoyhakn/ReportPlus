@@ -3,24 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_dashboard"
-    app:startDestination="@+id/navigation_expert">
+    app:startDestination="@+id/navigation_main">
 
     <fragment
-        android:id="@+id/navigation_expert"
+        android:id="@+id/navigation_main"
         android:name="com.aksoyhakn.reportplus.ui.main.main.MainFragment"
         android:label="@string/title_experts"
-        tools:layout="@layout/fragment_main"/>
+        tools:layout="@layout/fragment_main" />
 
     <fragment
-        android:id="@+id/navigation_journal"
+        android:id="@+id/navigation_search"
         android:name="com.aksoyhakn.reportplus.ui.main.search.SearchFragment"
         android:label="@string/title_journal"
-        tools:layout="@layout/fragment_search"/>
+        tools:layout="@layout/fragment_search">
+
+        <action
+            android:id="@+id/action_navigation_search_to_download"
+            app:destination="@id/downloadFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_indicator"
+        android:id="@+id/navigation_settings"
         android:name="com.aksoyhakn.reportplus.ui.main.indicator.IndicatorFragment"
         android:label="@string/title_indicator"
         tools:layout="@layout/fragment_indicator" />
+
+    <fragment
+        android:id="@+id/downloadFragment"
+        android:name="com.aksoyhakn.reportplus.ui.main.download.DownloadFragment"
+        android:label="Download"
+        tools:layout="@layout/fragment_download" />
 
 </navigation>
