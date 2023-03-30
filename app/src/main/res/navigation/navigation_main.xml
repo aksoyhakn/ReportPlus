@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_journal"
-        android:name="com.aksoyhakn.reportplus.ui.main.journal.JournalFragment"
+        android:name="com.aksoyhakn.reportplus.ui.main.search.SearchFragment"
         android:label="@string/title_journal"
-        tools:layout="@layout/fragment_journal"/>
+        tools:layout="@layout/fragment_search"/>
 
     <fragment
         android:id="@+id/navigation_indicator"

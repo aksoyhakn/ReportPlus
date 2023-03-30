@@ -59,10 +59,12 @@ object ViewBindingAdapters {
     fun setImageColorFilter(view: ImageView, isDarkMode: Boolean) {
         when (AppCompatDelegate.getDefaultNightMode()) {
             Configuration.UI_MODE_NIGHT_YES -> {
-                view.setColorFilter(view.context.resColor(R.color.lightDark), PorterDuff.Mode.SRC_IN)
+                view.setColorFilter(view.context.resColor(R.color.dark), PorterDuff.Mode.SRC_IN)
+                view.setImageResource(R.drawable.ic_settings)
             }
             else -> {
                 view.setColorFilter(view.context.resColor(R.color.dark), PorterDuff.Mode.SRC_IN)
+                view.setImageResource(R.drawable.ic_settings_dark)
             }
         }
     }

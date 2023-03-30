@@ -26,6 +26,49 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_settings"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivPremium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivPremium"
+                    bind:setImageColorFilter="@{true}" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_title"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivPremium"
+                    app:layout_constraintEnd_toStartOf="@+id/ivPremium"
+                    app:layout_constraintStart_toEndOf="@+id/ivSettings"
+                    app:layout_constraintTop_toTopOf="@+id/ivPremium" />
+
+                <ImageView
+                    android:id="@+id/ivPremium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/ic_premium"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
             <include
                 android:id="@+id/ivProfile"
                 layout="@layout/include_profile"
@@ -35,7 +78,7 @@
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/llToolbar" />
 
             <include
                 android:id="@+id/ivWatch"
@@ -54,12 +97,12 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="5dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="70dp"
                 android:background="@android:color/transparent"
                 android:orientation="vertical"
                 android:overScrollMode="never"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivWatch"
