@@ -29,9 +29,9 @@
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.aksoyhakn.reportplus.ui.main.indicator.IndicatorFragment"
+        android:name="com.aksoyhakn.reportplus.ui.main.settings.SettingsFragment"
         android:label="@string/title_indicator"
-        tools:layout="@layout/fragment_indicator" />
+        tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/downloadFragment"

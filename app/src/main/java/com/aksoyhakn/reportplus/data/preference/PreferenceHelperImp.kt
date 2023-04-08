@@ -17,14 +17,14 @@ class PreferenceHelperImp @Inject constructor(
 ) : PreferenceHelper {
 
     companion object {
-        const val PREF_KEY_ACCESS_TOKEN = "PREF_KEY_ACCESS_TOKEN"
+        const val PREF_KEY_COOKIE = "PREF_KEY_ACCESS_TOKEN"
     }
 
     private val mPrefs: SharedPreferences = SecurePreferences(context, "reportplus", prefFileName)
 
-    override fun getAccessToken(): String? = mPrefs.getString(PREF_KEY_ACCESS_TOKEN, "")
+    override fun getCookie(): String? = mPrefs.getString(PREF_KEY_COOKIE, "")
 
-    override fun setAccessToken(accessToken: String?) =
-        mPrefs.edit { putString(PREF_KEY_ACCESS_TOKEN, accessToken) }
+    override fun setCookie(cookie: String?) =
+        mPrefs.edit { putString(PREF_KEY_COOKIE, cookie) }
 
 }

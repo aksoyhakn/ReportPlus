@@ -2,7 +2,7 @@ package com.aksoyhakn.reportplus.data.service.util
 
 import android.graphics.drawable.Drawable
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException

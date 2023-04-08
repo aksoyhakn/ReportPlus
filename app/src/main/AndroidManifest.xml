@@ -22,6 +22,11 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"/>
+
         <service
             android:name=".utils.notification.AppFirebaseMessagingService"
             android:exported="true">

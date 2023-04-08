@@ -1,7 +1,9 @@
 package com.aksoyhakn.reportplus.base.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.aksoyhakn.reportplus.data.preference.PreferenceHelperImp
 import com.aksoyhakn.reportplus.utils.SingleLiveData
+import javax.inject.Inject
 
 /**
  * Created by hakanaksoy on 12.09.2022.

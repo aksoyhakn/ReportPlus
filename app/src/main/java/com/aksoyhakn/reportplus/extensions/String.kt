@@ -5,9 +5,9 @@ import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ClickableSpan
 import android.view.View
+import com.aksoyhakn.reportplus.utils.CookieInfo
 import java.util.*
 import java.util.regex.Pattern
-import kotlin.collections.ArrayList
 
 /**Examples**/
 /**
@@ -254,3 +254,14 @@ fun String.isValid(pattern: Pattern): Boolean {
 }
 
 fun String.toArraylist():ArrayList<String> = this.split(",").map { it.trim() } as ArrayList<String>
+
+fun String.getCookieHasSession(): Boolean {
+    val temp = this.split(";".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+    for (ar1 in temp) {
+        if (this.contains("sessionid")) {
+            CookieInfo.cookie = this
+            return true
+        }
+    }
+    return false
+}

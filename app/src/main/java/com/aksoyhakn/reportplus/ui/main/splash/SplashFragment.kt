@@ -5,6 +5,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.DecelerateInterpolator
 import android.view.animation.LinearInterpolator
+import android.webkit.CookieManager
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.aksoyhakn.reportplus.R
@@ -13,6 +14,7 @@ import com.aksoyhakn.reportplus.base.viewmodel.BaseViewModel
 import com.aksoyhakn.reportplus.databinding.FragmentSplashBinding
 import com.aksoyhakn.reportplus.extensions.*
 import com.aksoyhakn.reportplus.ui.main.splash.model.RemoteConfig
+import com.aksoyhakn.reportplus.utils.Constants
 import dagger.hilt.android.AndroidEntryPoint
 import java.net.UnknownHostException
 
@@ -94,6 +96,7 @@ class SplashFragment :
     }
 
     private fun navigateToDashboard(data: RemoteConfig?=null) {
+        val cookies = CookieManager.getInstance().getCookie(Constants.URL)
 
         val animation = ObjectAnimator.ofInt(dataBinding.progressBar, "progress", 0,100)
         animation.duration = 500

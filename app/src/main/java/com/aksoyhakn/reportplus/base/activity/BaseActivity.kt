@@ -31,7 +31,7 @@ abstract class BaseActivity<T : ViewDataBinding>(
     @Inject
     lateinit var firebaseAnalyticsHelper: FirebaseAnalyticsHelper
 
-    fun getBaseViewModel(): BaseViewModel? = null
+    open fun getBaseViewModel(): BaseViewModel? = null
 
     open fun bindScreen() {
         dataBinding.lifecycleOwner = this

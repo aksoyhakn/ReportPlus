@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.aksoyhakn.reportplus.base.viewmodel.BaseViewModel
+import com.aksoyhakn.reportplus.data.preference.PreferenceHelperImp
 import com.aksoyhakn.reportplus.extensions.*
 import com.aksoyhakn.reportplus.ui.common.LottieProgressDialog
 import com.aksoyhakn.reportplus.ui.main.MainActivity.Companion.pageCounter
@@ -30,6 +31,9 @@ abstract class BaseFragment<T : ViewDataBinding>(var layoutId: Int) : Fragment()
 
     @Inject
     lateinit var firebaseAnalyticsHelper: FirebaseAnalyticsHelper
+
+    @Inject
+    lateinit var preferenceHelperImp: PreferenceHelperImp
 
     abstract fun getBaseViewModel(): BaseViewModel
 

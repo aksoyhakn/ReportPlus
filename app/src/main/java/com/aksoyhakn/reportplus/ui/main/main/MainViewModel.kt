@@ -17,4 +17,7 @@ class MainViewModel : BaseViewModel() {
         "Earned Followers\n",
         "Earned Followers"
     )
+    var freeItemList = arrayListOf<MenuItem>()
+    var preeItemList = arrayListOf<MenuItem>()
+
 }

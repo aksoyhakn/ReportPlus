@@ -71,15 +71,21 @@ android {
 
     productFlavors {
         storeFlavor {
-            resValue "string", "app_name", "TrendLine"
-            buildConfigField("String", "BASE_URL", "\"http://testUrl.com/\"")
+            resValue "string", "app_name", "Report Plus+"
+            buildConfigField "String", "BASE_URL", '"https://i.instagram.com/api/v1/"'
+            buildConfigField "String", "CURRENT_USER", '"accounts/current_user/"'
+            buildConfigField "String", "GET_MESSAGES", '"direct_v2/inbox"'
+            buildConfigField "String", "GetMessageeDetail", '"direct_v2/threads/"'
             buildConfigField 'Boolean', 'GADGET_ENABLED', 'true'
             signingConfig signingConfigs.release
 
         }
         devFlavor {
-            resValue "string", "app_name", "TrendLine - Dev"
-            buildConfigField("String", "BASE_URL", "\"http://testUrl.com/\"")
+            resValue "string", "app_name", "Report Plus+"
+            buildConfigField "String", "BASE_URL", '"https://i.instagram.com/api/v1/"'
+            buildConfigField "String", "CURRENT_USER", '"accounts/current_user/"'
+            buildConfigField "String", "GET_MESSAGES", '"direct_v2/inbox"'
+            buildConfigField "String", "GetMessageeDetail", '"direct_v2/threads/"'
             buildConfigField 'Boolean', 'GADGET_ENABLED', 'false'
         }
     }

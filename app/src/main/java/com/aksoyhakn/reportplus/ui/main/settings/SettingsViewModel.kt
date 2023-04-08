@@ -1,4 +1,4 @@
-package com.aksoyhakn.reportplus.ui.main.indicator
+package com.aksoyhakn.reportplus.ui.main.settings
 
 import com.aksoyhakn.reportplus.base.viewmodel.BaseViewModel
 
@@ -8,5 +8,5 @@ import com.aksoyhakn.reportplus.base.viewmodel.BaseViewModel
  */
 
 
-class IndicatorViewModel : BaseViewModel() {
+class SettingsViewModel : BaseViewModel() {
 }

@@ -9,7 +9,7 @@ import com.aksoyhakn.reportplus.utils.Constants
 
 interface PreferenceHelper {
 
-    fun getAccessToken(): String?
-    fun setAccessToken(languageCode: String?)
+    fun getCookie(): String?
+    fun setCookie(languageCode: String?)
 
 }

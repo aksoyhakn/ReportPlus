@@ -25,10 +25,10 @@ class LoggingInterceptor @Inject constructor(var preferenceHelperImp: Preference
 
         val requestBuilder = request.newBuilder().method(request.method, request.body)
 
-        if (!preferenceHelperImp.getAccessToken().isNullOrEmpty()) {
+        if (!preferenceHelperImp.getCookie().isNullOrEmpty()) {
             requestBuilder.header(
                 "Authorization",
-                "Bearer ${preferenceHelperImp.getAccessToken()!!}"
+                "Bearer ${preferenceHelperImp.getCookie()!!}"
             )
         }
 

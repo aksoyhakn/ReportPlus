@@ -10,18 +10,18 @@
             type="com.aksoyhakn.reportplus.ui.main.main.MainViewModel" />
 
         <variable
-            name="listener"
-            type="com.aksoyhakn.reportplus.ui.main.main.adapter.MainCategoryAdapter.ListenerMainCategory" />
-
+            name="supportManager"
+            type="androidx.fragment.app.FragmentManager" />
 
     </data>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
+        style="@style/FragmentBackground"
+        android:fillViewport="true"
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            style="@style/FragmentBackground"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -104,25 +104,27 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivProfile" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvExpert"
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="70dp"
-                android:background="@android:color/transparent"
-                android:orientation="vertical"
-                android:overScrollMode="never"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="400dp"
+                android:nestedScrollingEnabled="true"
+                android:layout_marginHorizontal="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivWatch"
-                app:spanCount="2"
-                bind:setMainCategoryData="@{viewModel.itemList}"
-                bind:setMainCategoryListener="@{listener}" />
+                bind:setMainIndicator="@{indicator}"
+                bind:setMainManager="@{supportManager}" />
+
+            <com.aksoyhakn.reportplus.ui.common.component.ComponentIndicator
+                android:id="@+id/indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="80dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewPager"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -8,6 +8,8 @@ package com.aksoyhakn.reportplus.utils
 
 object Constants {
 
+    val URL = "https://www.instagram.com/"
+
     object App {
         const val TIMESTAMP_FORMAT = "yyyy-MM-dd'T'HH:mm:ssZ"
         const val DB_NAME = "report-plus"
@@ -20,5 +22,9 @@ object Constants {
 
     object Download {
         const val DOWNLOAD_DATA = "download_data"
+    }
+
+    object Menu {
+        const val MENU_ITEM = "menu_item"
     }
 }

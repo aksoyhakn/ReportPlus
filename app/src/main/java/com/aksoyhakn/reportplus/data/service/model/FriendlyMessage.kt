@@ -2,7 +2,7 @@ package com.aksoyhakn.reportplus.data.service.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 /**
  * Created by hakanaksoy on 12.09.2022.

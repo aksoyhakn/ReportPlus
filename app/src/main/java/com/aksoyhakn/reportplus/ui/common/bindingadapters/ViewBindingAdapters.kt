@@ -1,6 +1,7 @@
 package com.aksoyhakn.reportplus.ui.common.bindingadapters
 
 import android.content.res.Configuration
+import android.graphics.Color
 import android.graphics.PorterDuff
 import android.view.View
 import android.widget.ImageView
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.BindingAdapter
 import com.aksoyhakn.reportplus.R
 import com.aksoyhakn.reportplus.extensions.*
+import com.google.firebase.database.collection.LLRBNode
 import com.tistory.zladnrms.roundablelayout.RoundableLayout
 
 /**
@@ -59,12 +61,10 @@ object ViewBindingAdapters {
     fun setImageColorFilter(view: ImageView, isDarkMode: Boolean) {
         when (AppCompatDelegate.getDefaultNightMode()) {
             Configuration.UI_MODE_NIGHT_YES -> {
-                // view.setColorFilter(view.context.resColor(R.color.dark), PorterDuff.Mode.SRC_IN)
-                view.setImageResource(R.drawable.ic_settings)
+                 view.setColorFilter(view.context.resColor(R.color.colorWhite), PorterDuff.Mode.SRC_IN)
             }
             else -> {
-                //view.setColorFilter(view.context.resColor(R.color.dark), PorterDuff.Mode.SRC_IN)
-                view.setImageResource(R.drawable.ic_settings_dark)
+                view.setColorFilter(view.context.resColor(R.color.dark), PorterDuff.Mode.SRC_IN)
             }
         }
     }

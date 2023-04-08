@@ -5,7 +5,7 @@ import com.aksoyhakn.reportplus.R
 import com.aksoyhakn.reportplus.base.fragment.BaseFragment
 import com.aksoyhakn.reportplus.base.viewmodel.BaseViewModel
 import com.aksoyhakn.reportplus.databinding.FragmentMainBinding
-import com.aksoyhakn.reportplus.ui.main.main.adapter.MainCategoryAdapter
+import com.aksoyhakn.reportplus.extensions.handler
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -14,8 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
  */
 
 @AndroidEntryPoint
-class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main),
-    MainCategoryAdapter.ListenerMainCategory {
+class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
 
     private val viewModel by viewModels<MainViewModel>()
 
@@ -23,10 +22,6 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main),
 
     override fun bindScreen() {
         dataBinding.viewModel = viewModel
-        dataBinding.listener = this
-    }
-
-    override fun clickMainCategory(item: String) {
-
+        dataBinding.supportManager = childFragmentManager
     }
 }

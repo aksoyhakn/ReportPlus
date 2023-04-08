@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_main"
+        android:id="@+id/navigation_search"
         android:icon="@drawable/ic_search"
         android:menuCategory="secondary"
         android:title="@string/title_experts" />
 
     <item
-        android:id="@+id/navigation_search"
+        android:id="@+id/navigation_main"
         android:icon="@drawable/ic_category"
         android:menuCategory="secondary"
         android:title="@string/title_journal" />

@@ -16,4 +16,21 @@
     <string name="new_version_ok">Güncelle</string>
     <string name="new_version_cancel">Hayır, Teşekkürler</string>
 
+    <!-- FreeMenu -->
+    <string name="menu_follwers">Earned Followers</string>
+    <string name="menu_lost_follwers">Lost Followers</string>
+    <string name="menu_my_fans">My Fans</string>
+    <string name="menu_unfollwers">Unfollowers</string>
+    <string name="menu_dofollwers">Do Followers</string>
+    <!-- FreeMenu -->
+
+    <!-- PremiumMenu -->
+    <string name="menu_whoblocked">Who Blocked</string>
+    <string name="menu_haveblocked">I Have Blocked</string>
+    <string name="menu_top_commenters">Top Commenters</string>
+    <string name="menu_most_like_users">Most Liked Users</string>
+    <string name="menu_ghostusers">Ghost Users</string>
+    <!-- PremiumMenu -->
+
+
 </resources>
