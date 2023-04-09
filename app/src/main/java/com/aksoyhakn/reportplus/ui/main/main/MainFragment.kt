@@ -23,5 +23,16 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
     override fun bindScreen() {
         dataBinding.viewModel = viewModel
         dataBinding.supportManager = childFragmentManager
+
+        requireContext().handler(400L) {
+            viewModel.getCurrentUser()
+        }
+
+
+
+    }
+
+    fun initProfile() {
+
     }
 }

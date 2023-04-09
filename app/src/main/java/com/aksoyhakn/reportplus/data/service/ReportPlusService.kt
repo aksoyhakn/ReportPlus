@@ -14,76 +14,83 @@ interface ReportPlusService {
 
     @Headers("Content-Type: application/json")
     @GET("feed/reels_tray/")
-    fun getHomeStories(@HeaderMap headers: Map<String, String>): Response<HomeStory?>
+    suspend fun getHomeStories(@HeaderMap headers: Map<String, String>): Response<HomeStory>
 
     @GET("accounts/current_user/")
-    fun getCurrentUser(@HeaderMap headers: Map<String, String>): Response<CurrentUser?>
+    suspend fun getCurrentUser(@HeaderMap headers: Map<String, String>): Response<CurrentUser>
 
     @GET("friendships/autocomplete_user_list")
-    fun getSearchUser(@HeaderMap headers: Map<String, String>): Response<Follow?>
+    suspend fun getSearchUser(@HeaderMap headers: Map<String, String>): Response<Follow>
 
     @GET("feed/user/{userID}/story")
-    fun getUserStories(
+    suspend fun getUserStories(
         @HeaderMap headers: Map<String, String>,
         @Path("userID") userID: Long
-    ): Response<StoryDetail?>
+    ): Response<StoryDetail>
 
     @GET("media/{storypk}/list_reel_media_viewer")
-    fun getStoryViewers(
+    suspend fun getStoryViewers(
         @HeaderMap headers: Map<String, String>,
         @Path("storypk") storypk: Long,
         @Query("max_id") max_id: String
-    ): Response<Follow?>
+    ): Response<Follow>
 
     @GET("users/search")
-    fun getUserSearch(
+    suspend fun getUserSearch(
         @HeaderMap headers: Map<String, String>,
         @Query("q") query: String
-    ): Response<Follow?>
+    ): Response<Follow>
 
     @GET("friendships/{userID}/followers")
-    fun getFollowers(
+    suspend fun getFollowers(
         @HeaderMap headers: Map<String, String>,
         @Path("userID") userID: Long
-    ): Response<Follow?>
+    ): Response<Follow>
 
     @GET("friendships/{userID}/following")
-    fun getFollowing(
+    suspend fun getFollowing(
         @HeaderMap headers: Map<String, String>,
         @Path("userID") userID: Long
-    ): Response<Follow?>
+    ): Response<Follow>
 
 
     @GET("highlights/{userID}/highlights_tray")
-    fun getHighLight(
+    suspend fun getHighLight(
         @HeaderMap headers: Map<String, String>,
         @Path("userID") userID: Long
-    ): Response<HightLight?>
+    ): Response<HightLight>
 
     @GET("feed/reels_media/")
-    fun getHighLightDetail(
+    suspend fun getHighLightDetail(
         @HeaderMap headers: Map<String, String>,
         @Query("user_ids") id: String
-    ): Response<HighLightDetail?>
+    ): Response<HighLightDetail>
 
     @GET("/api/v1/feed/saved/")
-    fun getSavedPosts(
+    suspend fun getSavedPosts(
         @HeaderMap headers: Map<String, String>,
         @Query("max_id") max_id: String?,
         @Query("include_igtv_preview") include_igtv_preview: Boolean
-    ): Response<SavedFeeds?>
+    ): Response<SavedFeeds>
 
     @GET("feed/user/{id}")
-    fun getUserFeeds(
+    suspend fun getUserFeeds(
         @HeaderMap headers: Map<String, String>,
         @Path("id") id: Long,
         @Query("max_id") max_id: String?
-    ): Response<Feed?>
+    ): Response<Feed>
 
     @GET("fbsearch/recent_searches/")
-    fun getRecentSearch(
+    suspend fun getRecentSearch(
         @HeaderMap headers: Map<String, String>,
         @Query("type") type: String
-    ): Response<RecentSearch?>
+    ): Response<RecentSearch>
+
+
+    @GET("user/{userID}/info")
+    suspend fun getUserInfo(
+        @HeaderMap headers: Map<String, String>,
+        @Path("userID") id: Long
+    ): Response<CurrentUser>
 
 }

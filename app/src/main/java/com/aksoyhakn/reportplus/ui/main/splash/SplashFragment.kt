@@ -3,7 +3,6 @@ package com.aksoyhakn.reportplus.ui.main.splash
 import android.animation.ObjectAnimator
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.view.animation.DecelerateInterpolator
 import android.view.animation.LinearInterpolator
 import android.webkit.CookieManager
 import androidx.fragment.app.viewModels
@@ -12,7 +11,10 @@ import com.aksoyhakn.reportplus.R
 import com.aksoyhakn.reportplus.base.fragment.BaseFragment
 import com.aksoyhakn.reportplus.base.viewmodel.BaseViewModel
 import com.aksoyhakn.reportplus.databinding.FragmentSplashBinding
-import com.aksoyhakn.reportplus.extensions.*
+import com.aksoyhakn.reportplus.extensions.getCookieHasSession
+import com.aksoyhakn.reportplus.extensions.handler
+import com.aksoyhakn.reportplus.extensions.isOnline
+import com.aksoyhakn.reportplus.extensions.showDialog
 import com.aksoyhakn.reportplus.ui.main.splash.model.RemoteConfig
 import com.aksoyhakn.reportplus.utils.Constants
 import dagger.hilt.android.AndroidEntryPoint
@@ -103,9 +105,18 @@ class SplashFragment :
         animation.interpolator = LinearInterpolator()
         animation.start()
 
-        context?.handler(1000) {
-            Navigation.findNavController(dataBinding.root)
-                .navigate(R.id.action_splashFragment_to_onBoarding)
+        preferenceHelperImp.getCookie()?.takeIf { it.isNotEmpty() }?.apply {
+            if (this.getCookieHasSession()) {
+                context?.handler(1000) {
+                    Navigation.findNavController(dataBinding.root)
+                        .navigate(R.id.action_splashFragment_to_homeFragment)
+                }
+            }
+        } ?: kotlin.run {
+            context?.handler(1000) {
+                Navigation.findNavController(dataBinding.root)
+                    .navigate(R.id.action_splashFragment_to_onBoarding)
+            }
         }
 
        /* remoteCounter = data.pageCounter ?: 4

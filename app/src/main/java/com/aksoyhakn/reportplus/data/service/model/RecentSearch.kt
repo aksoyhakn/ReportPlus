@@ -6,6 +6,5 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class RecentSearch(
-    @SerializedName("recent")
-    val users: List<RecentSearchDetail>? = null
+    @SerializedName("recent") val recent: ArrayList<RecentSearchDetail>? = null
 ) : Parcelable

@@ -255,13 +255,16 @@ fun String.isValid(pattern: Pattern): Boolean {
 
 fun String.toArraylist():ArrayList<String> = this.split(",").map { it.trim() } as ArrayList<String>
 
-fun String.getCookieHasSession(): Boolean {
-    val temp = this.split(";".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-    for (ar1 in temp) {
-        if (this.contains("sessionid")) {
-            CookieInfo.cookie = this
-            return true
+fun String?.getCookieHasSession(): Boolean {
+    this?.let {
+        val temp = it.split(";".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        for (ar1 in temp) {
+            if (it.contains("sessionid")) {
+                CookieInfo.cookie = it
+                return true
+            }
         }
+        return false
     }
     return false
 }

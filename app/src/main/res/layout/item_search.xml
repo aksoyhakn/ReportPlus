@@ -6,8 +6,13 @@
     <data>
 
         <variable
-            name="profile"
-            type="String" />
+            name="user"
+            type="com.aksoyhakn.reportplus.data.service.model.User" />
+
+        <variable
+            name="isUnFollow"
+            type="Boolean" />
+
 
     </data>
 
@@ -32,13 +37,12 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/test"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                bind:setImage="@{profile}" />
+                bind:setImage="@{user.profilePicUrl}" />
 
         </com.tistory.zladnrms.roundablelayout.RoundableLayout>
 
@@ -48,28 +52,29 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:orientation="vertical"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintBottom_toBottomOf="@+id/rlProfile"
             app:layout_constraintStart_toEndOf="@+id/rlProfile"
+            app:layout_constraintEnd_toStartOf="@+id/rlUnFollow"
             app:layout_constraintTop_toTopOf="@+id/rlProfile">
 
             <TextView
                 android:id="@+id/tvNameSurname"
                 style="@style/StringColor"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:maxLines="2"
-                android:text="Name Surname"
+                android:text="@{user.fullName}"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvNickName"
                 style="@style/StringColor"
-                android:layout_width="81dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
-                android:text="username"
+                android:text="@{user.username}"
                 android:textSize="12sp" />
         </LinearLayout>
 
@@ -79,6 +84,9 @@
             android:layout_marginEnd="10dp"
             app:backgroundColor="@android:color/white"
             app:cornerAll="10dp"
+            android:id="@+id/rlUnFollow"
+            bind:visibleIf="@{isUnFollow}"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@+id/rlProfile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/rlProfile">

@@ -6,5 +6,5 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Follow(
-    @SerializedName("users") val users: List<User>? = null
+    @SerializedName("users") val users: ArrayList<User>? = null
 ) : Parcelable

@@ -29,7 +29,11 @@ data class User(
     @SerializedName("username")
     val username: String? = "",
     @SerializedName("friendship_status")
-    val friendshipStatus: FriendshipStatus? = null
+    val friendshipStatus: FriendshipStatus? = null,
+    @SerializedName("hd_profile_url_info")
+    val hdProfile: HdProfile? = null,
+    @SerializedName("fbid_v2")
+    val fbId: Long? = 0,
 ) : Parcelable
 
 @Parcelize
@@ -52,4 +56,15 @@ data class FriendshipStatus(
     val outgoingRequest: Boolean? = false,
     @SerializedName("is_bestie")
     val isBestie: Boolean? = false
+) : Parcelable
+
+
+@Parcelize
+data class HdProfile(
+    @SerializedName("width")
+    val width: Int?,
+    @SerializedName("height")
+    val height: Int,
+    @SerializedName("url")
+    val url: String?,
 ) : Parcelable

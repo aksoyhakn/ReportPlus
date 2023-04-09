@@ -5,6 +5,8 @@ import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.aksoyhakn.reportplus.BuildConfig
 import com.aksoyhakn.reportplus.app.ReportPlusApp
+import com.aksoyhakn.reportplus.data.persistence.AppDatabase
+import com.aksoyhakn.reportplus.data.persistence.BaseDao
 import com.aksoyhakn.reportplus.data.preference.PreferenceHelper
 import com.aksoyhakn.reportplus.data.preference.PreferenceHelperImp
 import com.aksoyhakn.reportplus.data.service.LoggingInterceptor
@@ -93,8 +95,9 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideReportPlusClient(
-        reportPlusService: ReportPlusService
+        reportPlusService: ReportPlusService,
+        appBaseDao: AppDatabase
     ): ReportPlusDataSource {
-        return ReportPlusDataSource(reportPlusService)
+        return ReportPlusDataSource(appBaseDao,reportPlusService)
     }
 }

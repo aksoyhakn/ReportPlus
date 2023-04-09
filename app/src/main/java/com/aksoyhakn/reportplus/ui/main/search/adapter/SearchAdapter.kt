@@ -6,13 +6,16 @@ import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.aksoyhakn.reportplus.R
+import com.aksoyhakn.reportplus.data.service.model.User
 import com.aksoyhakn.reportplus.databinding.ItemSearchBinding
+import com.aksoyhakn.reportplus.extensions.hide
 import com.aksoyhakn.reportplus.extensions.isNotNull
 import com.aksoyhakn.reportplus.extensions.setSafeOnClickListener
 
 
 class SearchAdapter(
-    val data: ArrayList<String>,
+    val data: ArrayList<User>,
+    val isUnFollow : Boolean ?= false,
     val listener: ListenerSearch
 ) : RecyclerView.Adapter<SearchAdapter.SearchViewHolder>() {
 
@@ -32,15 +35,17 @@ class SearchAdapter(
     override fun getItemCount(): Int = data.size
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
-        holder.bindData(data[position], position, data.size)
+        holder.bindData(data[position], position, isUnFollow)
     }
 
     class SearchViewHolder(
         var binding: ItemSearchBinding,
-        val onClick: (String) -> Unit
+        val onClick: (User) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bindData(item: String, position: Int, lastPosition: Int) {
+        fun bindData(item: User, position: Int, isUnFollow: Boolean?) {
+            binding.user = item
+            binding.isUnFollow = isUnFollow
             binding.rlItem.setSafeOnClickListener {
                 onClick(item)
             }
@@ -51,16 +56,18 @@ class SearchAdapter(
     companion object {
 
         @JvmStatic
-        @BindingAdapter(value = ["bind:setSearchData", "bind:setSearchListener"])
+        @BindingAdapter(value = ["bind:setSearchData","bind:setSearchIsUnFollow", "bind:setSearchListener"])
         fun setSearchData(
             view: RecyclerView,
-            data: ArrayList<String>?,
+            data: ArrayList<User>?,
+            isUnFollow : Boolean ?= false,
             listener: ListenerSearch
         ) {
             if (data.isNotNull()) {
                 view.adapter =
                     SearchAdapter(
-                        (data as ArrayList<String>),
+                        (data as ArrayList<User>),
+                        isUnFollow,
                         listener
                     )
             }
@@ -68,7 +75,7 @@ class SearchAdapter(
     }
 
     interface ListenerSearch {
-        fun clickSearch(item: String)
+        fun clickSearch(item: User)
     }
 
 }

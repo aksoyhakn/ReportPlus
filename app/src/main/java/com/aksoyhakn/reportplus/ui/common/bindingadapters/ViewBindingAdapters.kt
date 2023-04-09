@@ -137,11 +137,17 @@ object ViewBindingAdapters {
                 view.setBackgroundColor(view.resColor(R.color.lightDark, null))
             }
             else -> {
-                view.setBackgroundColor(view.resColor(R.color.darkv2, null))
+                view.setBackgroundColor(view.resColor(R.color.lightDark, null))
             }
         }
     }
 
+
+    @JvmStatic
+    @BindingAdapter("bind:visibleIf")
+    fun changeVisibility(view: View, visible: Boolean) {
+        view.visibility = if (visible) View.VISIBLE else View.GONE
+    }
 
 }
 

@@ -66,7 +66,7 @@ class LoginActivity :
 
         override fun onPageFinished(view: WebView, url: String) {
             val cookies = CookieManager.getInstance().getCookie(url)
-            if (cookies.getCookieHasSession() && !isInitService) {
+            if (cookies?.getCookieHasSession() != false) {
                 preferenceHelperImp.setCookie(cookies)
                 setResult(1)
                 isInitService = true
