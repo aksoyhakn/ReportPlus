@@ -89,6 +89,14 @@ class MainRepository @Inject constructor(
                 reportPlusDataSource.getHighLight(storyPk)
         }.asFlow()
     }
+
+    fun getUserFeeds(pk: Long, maxId: String): Flow<State<Feed>> {
+        return object : NetworkBoundRepository<Feed, Feed>() {
+            override suspend fun fetchFromRemote(): Response<Feed> =
+                reportPlusDataSource.getUserFeeds(pk, maxId)
+        }.asFlow()
+    }
+
     //Remote Database
 
 

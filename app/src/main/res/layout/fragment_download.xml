@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
 
     <data>
 
@@ -15,199 +16,145 @@
 
     </data>
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/FragmentBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llToolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/llToolbar"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginHorizontal="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/ivBack"
-                    onSafeClick="@{()->fragment.clickBack()}"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_back"
-                    android:visibility="visible"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/ivAppIcon"
-                    android:layout_width="100dp"
-                    android:layout_height="15dp"
-                    android:background="@drawable/app_title"
-                    android:gravity="center"
-                    app:layout_constraintBottom_toBottomOf="@+id/ivBack"
-                    app:layout_constraintEnd_toStartOf="@+id/ivPremium"
-                    app:layout_constraintStart_toEndOf="@+id/ivBack"
-                    app:layout_constraintTop_toTopOf="@+id/ivBack" />
-
-                <TextView
-                    android:id="@+id/tvAppTitle"
-                    style="@style/StringColor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Download"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/ivAppIcon"
-                    app:layout_constraintStart_toStartOf="@+id/ivAppIcon"
-                    app:layout_constraintTop_toBottomOf="@+id/ivAppIcon" />
-
-                <ImageView
-                    android:id="@+id/ivPremium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="10dp"
-                    android:background="@drawable/ic_premium"
-                    android:visibility="visible"
-                    app:layout_constraintBottom_toBottomOf="@+id/ivBack"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/ivBack" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <com.tistory.zladnrms.roundablelayout.RoundableLayout
-                android:id="@+id/rlProfile"
-                android:layout_width="match_parent"
-                android:layout_height="450dp"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="20dp"
-                android:elevation="5dp"
-                app:backgroundColor="@android:color/white"
-                app:cornerAll="40dp"
-                app:layout_constraintBottom_toTopOf="@+id/llDownload"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/llToolbar">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/test"
-                    android:scaleType="fitXY"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </com.tistory.zladnrms.roundablelayout.RoundableLayout>
-
-            <LinearLayout
-                android:id="@+id/llDownload"
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/ivBack"
+                onSafeClick="@{()->fragment.clickBack()}"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="90dp"
-                android:gravity="center"
-                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_back"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rlProfile">
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <com.tistory.zladnrms.roundablelayout.RoundableLayout
-                    android:id="@+id/rlPrint"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    app:cornerAll="20dp">
+            <ImageView
+                android:id="@+id/ivAppIcon"
+                android:layout_width="100dp"
+                android:layout_height="15dp"
+                android:background="@drawable/app_title"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+                app:layout_constraintEnd_toStartOf="@+id/ivPremium"
+                app:layout_constraintStart_toEndOf="@+id/ivBack"
+                app:layout_constraintTop_toTopOf="@+id/ivBack" />
 
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/background_gradient_color"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tvAppTitle"
+                style="@style/StringColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Download"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/ivAppIcon"
+                app:layout_constraintStart_toStartOf="@+id/ivAppIcon"
+                app:layout_constraintTop_toBottomOf="@+id/ivAppIcon" />
 
-                    <ImageView
-                        android:id="@+id/ivPrint"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/ic_print"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="20dp"
-                        android:text="Quality : Full Hd"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="14sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/ivPrint"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/ivPrint"
-                        app:layout_constraintTop_toTopOf="@+id/ivPrint" />
-
-                </com.tistory.zladnrms.roundablelayout.RoundableLayout>
-
-                <com.tistory.zladnrms.roundablelayout.RoundableLayout
-                    android:id="@+id/rlDownload"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="10dp"
-                    app:cornerAll="20dp">
-
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/background_gradient_color"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageView
-                        android:id="@+id/ivDownload"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/ic_download"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="20dp"
-                        android:text="Download"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="14sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/ivDownload"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/ivDownload"
-                        app:layout_constraintTop_toTopOf="@+id/ivDownload" />
-
-                </com.tistory.zladnrms.roundablelayout.RoundableLayout>
-
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/ivPremium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/ic_premium"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivBack" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <com.tistory.zladnrms.roundablelayout.RoundableLayout
+            android:id="@+id/rlProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:elevation="5dp"
+            app:backgroundColor="@android:color/white"
+            app:cornerAll="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llToolbar">
 
-    </androidx.core.widget.NestedScrollView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                bind:setImageCache="@{viewModel.downloadUrl}" />
+
+        </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+        <com.tistory.zladnrms.roundablelayout.RoundableLayout
+            android:id="@+id/rlDownload"
+            onSafeClick="@{()->fragment.clickDownload()}"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="-20dp"
+            android:elevation="10dp"
+            android:visibility="invisible"
+            app:cornerAll="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/rlProfile"
+            app:layout_constraintStart_toStartOf="@+id/rlProfile"
+            app:layout_constraintTop_toBottomOf="@+id/rlProfile">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/background_gradient_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivDownload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/ic_download"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="Download"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivDownload"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivDownload"
+                app:layout_constraintTop_toTopOf="@+id/ivDownload" />
+
+        </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </layout>

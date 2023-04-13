@@ -87,7 +87,7 @@ interface ReportPlusService {
     ): Response<RecentSearch>
 
 
-    @GET("user/{userID}/info")
+    @GET("users/{userID}/info")
     suspend fun getUserInfo(
         @HeaderMap headers: Map<String, String>,
         @Path("userID") id: Long

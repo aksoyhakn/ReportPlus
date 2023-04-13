@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class HightLight(
-    @SerializedName("tray") val tray: List<HightLightItem>? = null,
+    @SerializedName("tray") val tray: ArrayList<HightLightItem>? = null,
     @SerializedName("stories_viewer_gestures_nux_eligible") val storiesViewerGesturesNuxEligible: Boolean = false,
     @SerializedName("sticker_version") val stickerVersion: Int? = 0,
     @SerializedName("face_filter_nux_version") val faceFilterNuxVersion: Int? = 0,

@@ -30,7 +30,7 @@ data class User(
     val username: String? = "",
     @SerializedName("friendship_status")
     val friendshipStatus: FriendshipStatus? = null,
-    @SerializedName("hd_profile_url_info")
+    @SerializedName("hd_profile_pic_url_info")
     val hdProfile: HdProfile? = null,
     @SerializedName("fbid_v2")
     val fbId: Long? = 0,

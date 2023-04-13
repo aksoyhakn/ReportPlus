@@ -24,6 +24,10 @@ object Constants {
         const val DOWNLOAD_DATA = "download_data"
     }
 
+    object Profile {
+        const val PROFILE_DATA = "profile_data"
+    }
+
     object Menu {
         const val MENU_ITEM = "menu_item"
     }

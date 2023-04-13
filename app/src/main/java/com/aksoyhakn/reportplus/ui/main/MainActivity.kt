@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity() {
     private fun listenForNavigationDestinationChanges() {
         navController.addOnDestinationChangedListener { _, destination, arguments ->
             when (destination.id) {
-                R.id.splashFragment, R.id.onBoardingFragment, R.id.downloadFragment -> {
+                R.id.splashFragment, R.id.onBoardingFragment, R.id.downloadFragment , R.id.profileFragment -> {
                     hideBottomNavigationView()
                 }
                 else -> {

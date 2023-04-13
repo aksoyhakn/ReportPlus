@@ -1,10 +1,12 @@
 package com.aksoyhakn.reportplus.ui.main.main
 
 import android.util.Log
+import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.aksoyhakn.reportplus.base.viewmodel.BaseViewModel
 import com.aksoyhakn.reportplus.data.service.model.CurrentUser
+import com.aksoyhakn.reportplus.data.service.model.User
 import com.aksoyhakn.reportplus.data.service.util.State
 import com.aksoyhakn.reportplus.extensions.notNull
 import com.aksoyhakn.reportplus.extensions.toString
@@ -30,7 +32,7 @@ class MainViewModel @Inject constructor(
     var freeItemList = arrayListOf<MenuItem>()
     var preeItemList = arrayListOf<MenuItem>()
 
-    private val _currentUser = SingleLiveData<CurrentUser>()
+    var userData = ObservableField<User>()
 
     fun getCurrentUser() {
         viewModelScope.launch {
@@ -41,10 +43,12 @@ class MainViewModel @Inject constructor(
                     }
                     is State.Success -> {
                         toogleFragmentLoading(false)
-                        _currentUser.value = it.data.body()
-                        getFollow(it.data.body()?.user?.pk)
-                        getFollowing(it.data.body()?.user?.pk)
-                        getHighLight(it.data.body()?.user?.pk)
+
+                        userData.set(it.data.body()?.user)
+
+                        //getFollow(it.data.body()?.user?.pk)
+                        //getFollowing(it.data.body()?.user?.pk)
+                        getUserInfo(it.data.body()?.user?.pk)
 
                     }
                 }
@@ -82,12 +86,11 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    private fun getHighLight(userId: Long?) {
+    private fun getUserInfo(userId: Long?) {
         viewModelScope.launch {
-            mainRepository.getHighLight(userId ?: 0L).collect {
+            mainRepository.getUserInfo(userId ?: 0L).collect {
                 when (it) {
                     is State.Success -> {
-                       Log.d("Hakan - getHighLight ", it.data.body()?.tray?.size.toString())
                     }
                 }
             }

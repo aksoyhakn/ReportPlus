@@ -2,8 +2,10 @@ package com.aksoyhakn.reportplus.extensions
 
 import android.app.Activity
 import android.app.Dialog
+import android.app.DownloadManager
 import android.content.ActivityNotFoundException
 import android.content.Context
+import android.content.Context.DOWNLOAD_SERVICE
 import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Color
@@ -37,6 +39,8 @@ import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import java.io.File
+import java.util.*
 
 fun Activity?.setWindowFlag(on: Boolean) {
     this?.let {
@@ -355,6 +359,33 @@ fun Context.showAds(listener: (InterstitialAd?) -> Unit) {
         }
     }
 
+}
+
+fun Activity.downloadImageVideo(url: String? = "", name: String? = "") {
+    val file = "Images"
+    val mBaseFolderPath = (getExternalFilesDir(null)?.absolutePath
+            + File.separator
+            + getString(R.string.app_name)
+            + File.separator
+            + file
+            + File.separator)
+
+    if (!File(mBaseFolderPath).exists()) {
+        File(mBaseFolderPath).mkdir()
+    }
+
+    val path: String = mBaseFolderPath + name + " " + Date().time + ".jpg"
+    val mFilePath = "file://$path"
+
+    val downloadUri = Uri.parse(url)
+
+    val req = DownloadManager.Request(downloadUri)
+    req.setTitle(name)
+    req.setDestinationUri(Uri.parse(mFilePath))
+    req.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+
+    val dm = getSystemService(DOWNLOAD_SERVICE) as DownloadManager
+    dm.enqueue(req)
 }
 
 

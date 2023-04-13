@@ -9,7 +9,17 @@
         android:id="@+id/navigation_main"
         android:name="com.aksoyhakn.reportplus.ui.main.main.MainFragment"
         android:label="@string/title_experts"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+
+        <action
+            android:id="@+id/action_navigation_main_to_profile"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_search"
@@ -38,5 +48,11 @@
         android:name="com.aksoyhakn.reportplus.ui.main.download.DownloadFragment"
         android:label="Download"
         tools:layout="@layout/fragment_download" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.aksoyhakn.reportplus.ui.main.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>
